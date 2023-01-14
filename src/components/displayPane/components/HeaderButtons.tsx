@@ -1,6 +1,10 @@
 import { useState } from "react";
 import "./HeaderButtons.css";
 
+import { AiFillHome } from "react-icons/ai";
+import { BsCashCoin } from "react-icons/bs";
+import { GiFarmTractor } from "react-icons/gi";
+
 interface HeaderButtonsProps {
   currentView: string;
   setCurrentView: (view: string) => void;
@@ -14,7 +18,9 @@ const HeaderButtons: React.FC<HeaderButtonsProps> = ({ currentView, setCurrentVi
   };
 
   return (
-    <div style={{ display: "block", alignItems: "center", justifyContent: "center", right: "120px" }}>
+    <div
+      style={{ paddingLeft: "13px", display: "block", alignItems: "center", justifyContent: "center", right: "120px" }}
+    >
       <div
         className={`header-button ${hover === "Home" || (currentView === "home" && "active")}`}
         style={buttonStyle}
@@ -22,7 +28,7 @@ const HeaderButtons: React.FC<HeaderButtonsProps> = ({ currentView, setCurrentVi
         onMouseLeave={() => setHover("")}
         onClick={() => setCurrentView("home")}
       >
-        Home
+        <AiFillHome />
       </div>
       <div
         className={`header-button ${hover === "Pools" || (currentView === "pools" && "active")}`}
@@ -31,7 +37,7 @@ const HeaderButtons: React.FC<HeaderButtonsProps> = ({ currentView, setCurrentVi
         onMouseLeave={() => setHover("")}
         onClick={() => setCurrentView("pools")}
       >
-        Pools
+        <BsCashCoin />
       </div>
       <div
         className={`header-button ${hover === "Farms" || (currentView === "farms" && "active")}`}
@@ -39,7 +45,7 @@ const HeaderButtons: React.FC<HeaderButtonsProps> = ({ currentView, setCurrentVi
         onMouseEnter={() => setHover("Farms")}
         onMouseLeave={() => setHover("")}
       >
-        Farms
+        <GiFarmTractor />
       </div>
     </div>
   );
