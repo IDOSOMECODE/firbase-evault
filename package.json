@@ -2,6 +2,7 @@
   "name": "web3-boilerplate",
   "version": "0.1.2",
   "author": "Pedrojok01 <pedrojok@pm.me>",
+  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
