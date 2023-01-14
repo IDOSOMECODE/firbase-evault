@@ -20,7 +20,7 @@ const styles = {
     display: "flex",
     alignItems: "center",
     height: "42px",
-    minWidth: "145px",
+    minWidth: "10px",
     border: "0",
     borderRadius: "7px"
   }
@@ -53,12 +53,9 @@ function ChainSelector() {
   }, [chainId]);
 
   const items: MenuProps["items"] = [
-    { label: "Ethereum", key: "1", icon: labelToShow(ethereum_Logo, "Ethereum_logo") },
-    { label: "Goerli Testnet", key: "5", icon: labelToShow(ethereum_Logo, "Ethereum_logo") },
-    { label: "Polygon", key: "137", icon: labelToShow(polygon_logo, "Polygon_logo") },
-    { label: "Mumbai", key: "80001", icon: labelToShow(polygon_logo, "Polygon_logo") },
-    { label: "BNB Chain", key: "56", icon: labelToShow(bsc_Logo, "BNB_logo") },
-    { label: "BNB Testnet", key: "97", icon: labelToShow(bsc_Logo, "BNB_logo") }
+    { label: "Eth", key: "1", icon: labelToShow(ethereum_Logo, "Ethereum_logo") },
+    { label: "Poly", key: "137", icon: labelToShow(polygon_logo, "Polygon_logo") },
+    { label: "BNB", key: "56", icon: labelToShow(bsc_Logo, "BNB_logo") }
   ];
 
   useEffect(() => {

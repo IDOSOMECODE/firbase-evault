@@ -14,7 +14,7 @@ const HeaderButtons: React.FC<HeaderButtonsProps> = ({ currentView, setCurrentVi
   };
 
   return (
-    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", right: "120px" }}>
+    <div style={{ display: "block", alignItems: "center", justifyContent: "center", right: "120px" }}>
       <div
         className={`header-button ${hover === "Home" || (currentView === "home" && "active")}`}
         style={buttonStyle}

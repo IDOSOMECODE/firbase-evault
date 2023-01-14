@@ -78,7 +78,7 @@ const ConnectAccount: React.FC<WantedChain> = () => {
       {account === undefined ? (
         <div>
           <Button shape="round" type="primary" style={styles.button} onClick={() => setIsAuthModalOpen(true)}>
-            Connect Wallet
+            Connect
           </Button>
 
           <ConnectModal isModalOpen={isAuthModalOpen} setIsModalOpen={setIsAuthModalOpen} />
@@ -89,7 +89,7 @@ const ConnectAccount: React.FC<WantedChain> = () => {
         <>
           <div style={styles.account} onClick={() => setIsModalVisible(true)}>
             {account && typeof account === "string" && (
-              <p style={{ marginRight: "5px", ...styles.text }}>{getEllipsisTxt(account, 6)}</p>
+              <p style={{ marginRight: "5px", ...styles.text }}>{getEllipsisTxt(account, 4)}</p>
             )}
             <Jazzicons seed={account} />
           </div>

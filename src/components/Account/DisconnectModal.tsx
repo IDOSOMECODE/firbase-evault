@@ -56,7 +56,7 @@ const DisconnectModal: React.FC<ConnectModalProps> = ({ isModalOpen, setIsModalO
         }}
         onClick={() => disconnect()}
       >
-        Disconnect Wallet
+        Disconnect
       </Button>
     </Modal>
   );

@@ -37,6 +37,14 @@ const styles = {
     padding: "0px 30px",
     paddingTop: "15px"
   },
+  leftContainer: {
+    position: "fixed",
+    left: "0",
+    top: "0",
+    bottom: "0",
+    width: "70px",
+    backgroundColor: "#333333"
+  },
   headerRight: {
     display: "flex",
     gap: "10px",
@@ -72,14 +80,16 @@ function App() {
 
   return (
     <Layout style={styles.layout}>
-      <Header style={{ ...styles.header, justifyContent: "space-between" }}>
-        <div style={{ display: "flex", justifyContent: "flex-start" }}>
-          <Logo />
-          <HeaderButtons currentView={currentView} setCurrentView={setCurrentView} />
-        </div>
+      <Header style={{ ...styles.header, justifyContent: "flex-end" }}>
         <div style={styles.headerRight}>
           <ChainSelector />
           <ConnectAccount />
+        </div>
+        <div style={{ ...styles.leftContainer }}>
+          <div style={{ display: "flex", justifyContent: "flex-start" }}>
+            <Logo />
+          </div>
+          <HeaderButtons currentView={currentView} setCurrentView={setCurrentView} />
         </div>
       </Header>
       <div style={styles.content}>{currentView === "home" ? <DisplayPane /> : <Pools />}</div>
@@ -102,12 +112,12 @@ export const Logo = () => {
   return (
     <>
       {isMobile ? (
-        <div style={{ paddingTop: "10px" }}>
-          <img src={eVaultLogo} alt="eVaultLogo" width="60px" />;
+        <div style={{ paddingLeft: "10px", paddingTop: "10px" }}>
+          <img src={eVaultLogo} alt="eVaultLogo" width="60px" />
         </div>
       ) : (
-        <div style={{ paddingTop: "10px" }}>
-          <img src={eVaultLogo} alt="eVaultLogo" width="60px" />;
+        <div style={{ paddingLeft: "10px", paddingTop: "10px" }}>
+          <img src={eVaultLogo} alt="eVaultLogo" width="60px" />
         </div>
       )}
     </>
