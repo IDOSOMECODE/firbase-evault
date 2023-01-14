@@ -1,0 +1,28 @@
+.stake-evault-card {
+  width: 250px;
+  height: 250px;
+}
+
+.stake-evault-card-title {
+  text-align: center;
+  font-size: 20px;
+}
+
+.stake-evault-card-button {
+  margin: 20px;
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.second-logo {
+  width: 40px;
+  position: absolute;
+  margin: 10px 10px 0 10px;
+  z-index: 1;
+}
+
+.stake-evault-card-text {
+  text-align: center;
+  font-size: 15px;
+}

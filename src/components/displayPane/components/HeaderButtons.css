@@ -1,0 +1,13 @@
+.header-button {
+  background-color: transparent;
+  color: white;
+  font-size: 3em;
+  margin-right: 40px;
+
+}
+
+.hover {
+  text-decoration: underline;
+  color: gray;
+
+}
