@@ -85,7 +85,7 @@ function App() {
       <div style={styles.content}>{currentView === "home" ? <DisplayPane /> : <Pools />}</div>
       <Footer style={styles.footer}>
         <div style={{ display: "block" }}>
-          Please leave this{" "}
+          Please leav this{" "}
           <a href="https://github.com/Pedrojok01/Web3-Boilerplate" target="_blank" rel="noopener noreferrer">
             boilerplate
           </a>
