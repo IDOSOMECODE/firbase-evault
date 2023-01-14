@@ -1,5 +1,4 @@
-import { useState } from "react";
-import "./HeaderButtons.css";
+import "./ButtomButtons.css";
 
 import { AiFillHome } from "react-icons/ai";
 import { BsCashCoin } from "react-icons/bs";
@@ -10,39 +9,26 @@ interface HeaderButtonsProps {
   setCurrentView: (view: string) => void;
 }
 
-const ButtomButtons: React.FC<HeaderButtonsProps> = ({ currentView, setCurrentView }) => {
-  const [hover, setHover] = useState("");
-
-  const buttonStyle = {
-    cursor: "pointer"
-  };
-
+const ButtomButtons: React.FC<HeaderButtonsProps> = () => {
   return (
-    <div style={{ paddingLeft: "13px", display: "block", justifyContent: "center", right: "120px" }}>
-      <div
-        className={`header-button ${hover === "Home" || (currentView === "home" && "active")}`}
-        style={buttonStyle}
-        onMouseEnter={() => setHover("Home")}
-        onMouseLeave={() => setHover("")}
-        onClick={() => setCurrentView("home")}
-      >
+    <div
+      style={{
+        position: "absolute",
+        bottom: "0",
+        width: "100%",
+        display: "flex",
+        justifyContent: "space-around",
+        backgroundColor: "#333333",
+        paddingTop: "15px"
+      }}
+    >
+      <div style={{ color: "white", fontSize: "40px" }}>
         <AiFillHome />
       </div>
-      <div
-        className={`header-button ${hover === "Pools" || (currentView === "pools" && "active")}`}
-        style={buttonStyle}
-        onMouseEnter={() => setHover("Pools")}
-        onMouseLeave={() => setHover("")}
-        onClick={() => setCurrentView("pools")}
-      >
+      <div style={{ color: "White", fontSize: "40px" }}>
         <BsCashCoin />
       </div>
-      <div
-        className={`header-button ${hover === "Farms" || (currentView === "farms" && "active")}`}
-        style={buttonStyle}
-        onMouseEnter={() => setHover("Farms")}
-        onMouseLeave={() => setHover("")}
-      >
+      <div style={{ color: "White", fontSize: "40px" }}>
         <GiFarmTractor />
       </div>
     </div>

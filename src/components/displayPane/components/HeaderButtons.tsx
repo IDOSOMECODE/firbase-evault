@@ -11,7 +11,7 @@ interface HeaderButtonsProps {
 }
 
 const HeaderButtons: React.FC<HeaderButtonsProps> = ({ currentView, setCurrentView }) => {
-  const [hover, setHover] = useState("");
+  const [hover] = useState("");
 
   const buttonStyle = {
     cursor: "pointer"
@@ -24,8 +24,6 @@ const HeaderButtons: React.FC<HeaderButtonsProps> = ({ currentView, setCurrentVi
       <div
         className={`header-button ${hover === "Home" || (currentView === "home" && "active")}`}
         style={buttonStyle}
-        onMouseEnter={() => setHover("Home")}
-        onMouseLeave={() => setHover("")}
         onClick={() => setCurrentView("home")}
       >
         <AiFillHome />
@@ -33,8 +31,6 @@ const HeaderButtons: React.FC<HeaderButtonsProps> = ({ currentView, setCurrentVi
       <div
         className={`header-button ${hover === "Pools" || (currentView === "pools" && "active")}`}
         style={buttonStyle}
-        onMouseEnter={() => setHover("Pools")}
-        onMouseLeave={() => setHover("")}
         onClick={() => setCurrentView("pools")}
       >
         <BsCashCoin />
@@ -42,8 +38,6 @@ const HeaderButtons: React.FC<HeaderButtonsProps> = ({ currentView, setCurrentVi
       <div
         className={`header-button ${hover === "Farms" || (currentView === "farms" && "active")}`}
         style={buttonStyle}
-        onMouseEnter={() => setHover("Farms")}
-        onMouseLeave={() => setHover("")}
       >
         <GiFarmTractor />
       </div>

@@ -15,17 +15,13 @@ import Pools from "./components/displayPane/Pools";
 import "./App.css";
 import { useWindowWidthAndHeight } from "./hooks/useWindowWidthAndHeight";
 
-const { Header, Footer } = Layout;
+const { Header } = Layout;
 
 const styles = {
   layout: {
     backgroundImage: `url(${background})`,
     backgroundPosition: "center",
-    backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-    width: "100vw",
-    height: "100vh",
-    overflow: "auto",
     fontFamily: "Sora, sans-serif"
   },
   header: {
@@ -63,14 +59,6 @@ const styles = {
     marginTop: "100px",
     padding: "10px",
     overflow: "auto"
-  },
-  footer: {
-    position: "fixed",
-    textAlign: "center",
-    width: "100%",
-    bottom: "0",
-    color: "white",
-    backgroundColor: "transparent"
   }
 } as const;
 
@@ -80,24 +68,24 @@ function App() {
   if (!window.Buffer) window.Buffer = Buffer;
 
   return (
-    <Layout style={styles.layout}>
-      <Header style={{ ...styles.header, justifyContent: "flex-end" }}>
-        <div style={styles.headerRight}>
-          <ChainSelector />
-          <ConnectAccount />
-        </div>
-        <div style={{ ...styles.leftContainer }}>
-          <div style={{ display: "flex", justifyContent: "flex-start" }}>
-            <Logo />
+    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+      <Layout style={styles.layout}>
+        <Header style={{ ...styles.header, justifyContent: "flex-end" }}>
+          <div style={styles.headerRight}>
+            <ChainSelector />
+            <ConnectAccount />
           </div>
-          <HeaderButtons currentView={currentView} setCurrentView={setCurrentView} />
-        </div>
-      </Header>
-      <div style={styles.content}>{currentView === "home" ? <DisplayPane /> : <Pools />}</div>
-      <Footer style={styles.footer}>
+          <div style={{ ...styles.leftContainer }}>
+            <div style={{ display: "flex", justifyContent: "flex-start" }}>
+              <Logo />
+            </div>
+            <HeaderButtons currentView={currentView} setCurrentView={setCurrentView} />
+          </div>
+        </Header>
         <ButtomButtons currentView={currentView} setCurrentView={setCurrentView} />
-      </Footer>
-    </Layout>
+        <div style={styles.content}>{currentView === "home" ? <DisplayPane /> : <Pools />}</div>
+      </Layout>
+    </div>
   );
 }
 
