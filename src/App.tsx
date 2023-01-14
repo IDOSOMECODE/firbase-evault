@@ -8,6 +8,7 @@ import background from "./assets/images/background.jpg";
 import eVaultLogo from "./assets/images/eVaultLogo.png";
 import ConnectAccount from "./components/Account/ConnectAccount";
 import ChainSelector from "./components/ChainSelector";
+import ButtomButtons from "./components/displayPane/components/ButtomButtons";
 import HeaderButtons from "./components/displayPane/components/HeaderButtons";
 import DisplayPane from "./components/displayPane/DisplayPane";
 import Pools from "./components/displayPane/Pools";
@@ -94,13 +95,7 @@ function App() {
       </Header>
       <div style={styles.content}>{currentView === "home" ? <DisplayPane /> : <Pools />}</div>
       <Footer style={styles.footer}>
-        <div style={{ display: "block" }}>
-          Please leav this{" "}
-          <a href="https://github.com/Pedrojok01/Web3-Boilerplate" target="_blank" rel="noopener noreferrer">
-            boilerplate
-          </a>
-          , if you like it!
-        </div>
+        <ButtomButtons currentView={currentView} setCurrentView={setCurrentView} />
       </Footer>
     </Layout>
   );
