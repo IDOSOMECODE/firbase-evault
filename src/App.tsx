@@ -37,7 +37,7 @@ const styles = {
   leftContainer: {
     position: "fixed",
     left: "0",
-    top: "0",
+    top: "40px",
     bottom: "0",
     width: "70px",
     backgroundColor: "#333333"
@@ -64,6 +64,7 @@ const styles = {
 
 function App() {
   const [currentView, setCurrentView] = useState("home");
+  const [width] = useWindowWidthAndHeight();
 
   if (!window.Buffer) window.Buffer = Buffer;
 
@@ -71,40 +72,26 @@ function App() {
     <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Layout style={styles.layout}>
         <Header style={{ ...styles.header, justifyContent: "flex-end" }}>
+          <div style={{ position: "absolute", top: "10px", left: "10px", zIndex: 1 }}>
+            <img src={eVaultLogo} alt="eVaultLogo" width="50px" />
+          </div>
           <div style={styles.headerRight}>
             <ChainSelector />
             <ConnectAccount />
           </div>
-          <div style={{ ...styles.leftContainer }}>
-            <div style={{ display: "flex", justifyContent: "flex-start" }}>
-              <Logo />
-            </div>
-            <HeaderButtons currentView={currentView} setCurrentView={setCurrentView} />
+          <div style={{ display: "flex", justifyContent: "flex-start" }}>
+            {width > 768 && (
+              <div style={{ ...styles.leftContainer }}>
+                <HeaderButtons currentView={currentView} setCurrentView={setCurrentView} />
+              </div>
+            )}
           </div>
         </Header>
-        <ButtomButtons currentView={currentView} setCurrentView={setCurrentView} />
+        {width <= 768 && <ButtomButtons currentView={currentView} setCurrentView={setCurrentView} />}
         <div style={styles.content}>{currentView === "home" ? <DisplayPane /> : <Pools />}</div>
       </Layout>
     </div>
   );
 }
-
-export const Logo = () => {
-  const [width] = useWindowWidthAndHeight();
-  const isMobile = width <= 768;
-  return (
-    <>
-      {isMobile ? (
-        <div style={{ paddingLeft: "10px", paddingTop: "10px" }}>
-          <img src={eVaultLogo} alt="eVaultLogo" width="60px" />
-        </div>
-      ) : (
-        <div style={{ paddingLeft: "10px", paddingTop: "10px" }}>
-          <img src={eVaultLogo} alt="eVaultLogo" width="60px" />
-        </div>
-      )}
-    </>
-  );
-};
 
 export default App;
