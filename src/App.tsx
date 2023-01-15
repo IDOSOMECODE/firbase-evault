@@ -34,14 +34,6 @@ const styles = {
     padding: "0px 30px",
     paddingTop: "15px"
   },
-  leftContainer: {
-    position: "fixed",
-    left: "0",
-    top: "40px",
-    bottom: "0",
-    width: "70px",
-    backgroundColor: "#333333"
-  },
   headerRight: {
     display: "flex",
     gap: "10px",
@@ -81,7 +73,7 @@ function App() {
           </div>
           <div style={{ display: "flex", justifyContent: "flex-start" }}>
             {width > 768 && (
-              <div style={{ ...styles.leftContainer }}>
+              <div>
                 <HeaderButtons currentView={currentView} setCurrentView={setCurrentView} />
               </div>
             )}

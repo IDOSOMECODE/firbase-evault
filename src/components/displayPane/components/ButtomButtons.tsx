@@ -9,7 +9,7 @@ interface HeaderButtonsProps {
   setCurrentView: (view: string) => void;
 }
 
-const ButtomButtons: React.FC<HeaderButtonsProps> = () => {
+const ButtomButtons: React.FC<HeaderButtonsProps> = ({ setCurrentView }) => {
   return (
     <div
       style={{
@@ -22,13 +22,13 @@ const ButtomButtons: React.FC<HeaderButtonsProps> = () => {
         paddingTop: "15px"
       }}
     >
-      <div style={{ color: "white", fontSize: "40px" }}>
+      <div style={{ color: "white", fontSize: "40px" }} onClick={() => setCurrentView("home")}>
         <AiFillHome />
       </div>
-      <div style={{ color: "White", fontSize: "40px" }}>
+      <div style={{ color: "White", fontSize: "40px" }} onClick={() => setCurrentView("pools")}>
         <BsCashCoin />
       </div>
-      <div style={{ color: "White", fontSize: "40px" }}>
+      <div style={{ color: "White", fontSize: "40px" }} onClick={() => setCurrentView("farms")}>
         <GiFarmTractor />
       </div>
     </div>

@@ -1,7 +1,5 @@
-import { useWeb3React } from "@web3-react/core";
 import { Divider } from "antd";
 
-import { CHAINS } from "../../constants/networks";
 import { useWindowWidthAndHeight } from "../../hooks/useWindowWidthAndHeight";
 import StakeEVaultCard from "./components/StakeEVaultCard";
 import StakeEVaultCardUSDT from "./components/StakeEVaultCardUSDT";
@@ -48,16 +46,12 @@ const styles = {
 } as const;
 
 const Pools: React.FC = () => {
-  const { chainId, isActive } = useWeb3React();
   const [width] = useWindowWidthAndHeight();
   const isMobile = width <= 768;
 
-  if (chainId === undefined) return null;
-  const name = chainId ? CHAINS[chainId]?.name : undefined;
-
   return (
     <div style={styles.container}>
-      <div style={styles.title}>Pools On {name}</div>
+      <div style={styles.title}>Pools</div>
       <div style={styles.content}>
         All active pools, send me a dm if you want your token here
         <a href="https://t.me/Aleksandee" target="_blank">
@@ -65,22 +59,20 @@ const Pools: React.FC = () => {
         </a>
       </div>
       <div style={styles.content}>
-        {isActive && (
-          <>
-            <Divider />
-            <div style={{ display: "flex", flexWrap: "wrap" }}>
-              <div style={styles.card}>
-                <StakeEVaultCard />
-              </div>
-              <div style={styles.card}>
-                <StakeEVaultCardUSDT />
-              </div>
+        <>
+          <Divider />
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
+            <div style={styles.card}>
+              <StakeEVaultCard />
             </div>
-            <div style={styles.action}>
-              {!isMobile && <Divider type="vertical" style={{ fontSize: "120px !important" }} />}
+            <div style={styles.card}>
+              <StakeEVaultCardUSDT />
             </div>
-          </>
-        )}
+          </div>
+          <div style={styles.action}>
+            {!isMobile && <Divider type="vertical" style={{ fontSize: "120px !important" }} />}
+          </div>
+        </>
       </div>
     </div>
   );

@@ -9,37 +9,48 @@ interface HeaderButtonsProps {
   currentView: string;
   setCurrentView: (view: string) => void;
 }
-
 const HeaderButtons: React.FC<HeaderButtonsProps> = ({ currentView, setCurrentView }) => {
-  const [hover] = useState("");
-
-  const buttonStyle = {
-    cursor: "pointer"
-  };
+  const [hover, setHover] = useState(false);
 
   return (
     <div
-      style={{ paddingLeft: "13px", display: "block", alignItems: "center", justifyContent: "center", right: "120px" }}
+      className={`header-button-container ${hover ? "hover" : ""}`}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
       <div
-        className={`header-button ${hover === "Home" || (currentView === "home" && "active")}`}
-        style={buttonStyle}
+        className={`header-button ${currentView === "home" && "active"} ${hover ? "hover" : ""}`}
         onClick={() => setCurrentView("home")}
       >
         <AiFillHome />
+        {hover && (
+          <div className="icon-text" style={{ marginLeft: "10px" }}>
+            Home
+          </div>
+        )}
       </div>
       <div
-        className={`header-button ${hover === "Pools" || (currentView === "pools" && "active")}`}
-        style={buttonStyle}
+        className={`header-button ${currentView === "pools" && "active"} ${hover ? "hover" : ""}`}
         onClick={() => setCurrentView("pools")}
       >
         <BsCashCoin />
+        {hover && (
+          <div className="icon-text" style={{ marginLeft: "10px" }}>
+            Pools
+          </div>
+        )}
       </div>
+
       <div
-        className={`header-button ${hover === "Farms" || (currentView === "farms" && "active")}`}
-        style={buttonStyle}
+        className={`header-button ${currentView === "farms" && "active"} ${hover ? "hover" : ""}`}
+        onClick={() => setCurrentView("farms")}
       >
         <GiFarmTractor />
+        {hover && (
+          <div className="icon-text" style={{ marginLeft: "10px" }}>
+            Farms
+          </div>
+        )}
       </div>
     </div>
   );

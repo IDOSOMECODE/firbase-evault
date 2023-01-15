@@ -1,15 +1,29 @@
 .header-button {
-  background-color: transparent;
   color: white;
-  font-size: 3em;
-  width: 100%;
+  font-size: 2em;
   margin-bottom: 10px;
-  margin-top: 50px;
+  margin-top: 90px;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
+.header-button-container.hover {
+  width: 140px;
+}
 
-.hover {
-  text-decoration: underline;
-  color: gray;
+.header-button-container {
+  position: fixed;
+  left: 0;
+  top: 40px;
+  bottom: 0;
+  width: 70px;
+  background-color: #333333;
+  cursor: pointer;
+  padding-left: 18px;
+  transition: width 0.5s;
+}
 
+.icon-text {
+  color: grey;
 }
