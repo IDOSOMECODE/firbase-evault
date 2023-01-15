@@ -1,6 +1,6 @@
-.stake-evault-card {
-  width: 170px;
-  height: 200px;
+.stake-evault-cardusdt {
+  width: 400px;
+  height: 50px;
 }
 
 .stake-evault-card-title {
@@ -18,9 +18,4 @@
 .stake-evault-card-text {
   text-align: center;
   font-size: 15px;
-}
-
-.approve-button {
-  width: 60px;
-  height: 20px;
 }

@@ -1,28 +1,21 @@
-.stake-evault-card {
-  width: 170px;
-  height: 200px;
-}
-
-.stake-evault-card-title {
-  text-align: center;
-  font-size: 20px;
-}
-
-.stake-evault-card-button {
+.stake-evault-card-buttonusdt {
   margin: 20px;
   width: 100px;
   display: block;
   margin: 0 auto;
 }
 
-.second-logo {
+.second-logousdt {
   width: 20px;
-  position: absolute;
   margin: 10px 10px 0 10px;
   z-index: 1;
 }
 
-.stake-evault-card-text {
-  text-align: center;
+.stake-evault-card-textusdt {
   font-size: 15px;
+}
+
+.approve-buttonusdt {
+  width: 0px;
+  height: 20px;
 }

@@ -41,7 +41,7 @@ const styles = {
     fontWeight: 800
   },
   card: {
-    maxWidth: "33%"
+    maxWidth: "100%"
   }
 } as const;
 
@@ -61,11 +61,11 @@ const Pools: React.FC = () => {
       <div style={styles.content}>
         <>
           <Divider />
-          <div style={{ display: "flex", flexWrap: "wrap" }}>
-            <div style={styles.card}>
+          <div style={{ display: "block" }}>
+            <div className="card">
               <StakeEVaultCard />
             </div>
-            <div style={styles.card}>
+            <div className="card">
               <StakeEVaultCardUSDT />
             </div>
           </div>
