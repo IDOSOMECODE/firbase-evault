@@ -21,6 +21,7 @@ const styles = {
   layout: {
     backgroundImage: `url(${background})`,
     backgroundPosition: "center",
+    backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     fontFamily: "Sora, sans-serif"
   },
