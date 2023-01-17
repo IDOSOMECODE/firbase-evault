@@ -25,7 +25,7 @@ const StakeEVaultCard = () => {
           <img src={StakeLogo} alt="StakeLogo" width="30px" />
           <img src={StakeLogo} alt="StakeLogo" width="20px" className="second-logo" />
         </div>
-        <div style={{ display: "flex", alignSelf: "flex-end" }}>
+        <div style={{ display: "flex", alignSelf: "flex-end", paddingRight: "10px" }}>
           <Button type="primary">Approve</Button>
         </div>
       </div>
