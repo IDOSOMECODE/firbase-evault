@@ -25,7 +25,7 @@ const Status = ({
         </>
       ) : isActive ? (
         <>
-           <span style={styles.statusText}>🟢 Connected</span>
+          <span style={styles.statusText}>🟢 Connected</span>
         </>
       ) : (
         <>

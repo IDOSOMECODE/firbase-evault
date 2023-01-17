@@ -2,7 +2,6 @@
   "name": "web3-boilerplate",
   "version": "0.1.2",
   "author": "Pedrojok01 <pedrojok@pm.me>",
-  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -28,7 +27,6 @@
     "ethers": "5.7.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.7.1",
     "react-jazzicon": "^1.0.4",
     "react-scripts": "5.0.1",
     "swr": "1.3.0"
@@ -41,14 +39,15 @@
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/parser": "^5.40.0",
     "dotenv": "^16.0.3",
-    "eslint": "^8.31.0",
-    "eslint-config-prettier": "^8.6.0",
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-import-resolver-typescript": "^3.5.2",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.7.1",
     "typescript": "^4.8.4"
   },
   "eslintConfig": {
