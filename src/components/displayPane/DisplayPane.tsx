@@ -2,7 +2,7 @@ import { useWeb3React } from "@web3-react/core";
 import { Divider } from "antd";
 
 import { useWindowWidthAndHeight } from "../../hooks/useWindowWidthAndHeight";
-import { Infos, SignMessage, Status, TransferEth } from "./components";
+import { Status } from "./components";
 
 const styles = {
   container: {
@@ -24,7 +24,7 @@ const styles = {
   content: {
     width: "85%",
     margin: "auto",
-    fontSize: "17px"
+    fontSize: "17px" 
   },
   action: {
     display: "inline-flex",
@@ -35,24 +35,21 @@ const styles = {
 } as const;
 
 const DisplayPane: React.FC = () => {
-  const { chainId, isActivating, isActive } = useWeb3React();
+  const { isActivating, isActive } = useWeb3React();
   const [width] = useWindowWidthAndHeight();
   const isMobile = width <= 768;
 
   return (
     <div style={styles.container}>
-      <div style={styles.title}>Display Info</div>
+      <div style={styles.title}>Welcome to eVault</div>
       <div style={styles.content}>
         <Status isActivating={isActivating} isActive={isActive} />
-        <Infos chainId={chainId} />
 
         {isActive && (
           <>
             <Divider />
             <div style={styles.action}>
-              <SignMessage />
               {!isMobile && <Divider type="vertical" style={{ fontSize: "120px !important" }} />}
-              <TransferEth />
             </div>
           </>
         )}

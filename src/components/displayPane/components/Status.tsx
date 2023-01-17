@@ -21,15 +21,15 @@ const Status = ({
     <div style={styles.display}>
       {isActivating ? (
         <>
-          Account status: <span style={styles.statusText}>🟡 Connecting</span>
+          <span style={styles.statusText}>🟡 Connecting</span>
         </>
       ) : isActive ? (
         <>
-          Account status: <span style={styles.statusText}>🟢 Connected</span>
+           <span style={styles.statusText}>🟢 Connected</span>
         </>
       ) : (
         <>
-          Account status: <span style={styles.statusText}>⚪️ Disconnected</span>
+          <span style={styles.statusText}>⚪️ Disconnected</span>
         </>
       )}
     </div>
