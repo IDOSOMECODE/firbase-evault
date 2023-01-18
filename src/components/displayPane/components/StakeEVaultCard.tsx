@@ -1,13 +1,14 @@
+import { useState } from "react";
 import { Button } from "antd";
-
 import "./StakeEVaultCard.css";
-import StakeLogo from "./Logos/0xeE34Af939a75223571ac818f0958b67cba48cd01.png";
-
+//import StakeLogo from "./Logos/0xeE34Af939a75223571ac818f0958b67cba48cd01.png";
 const StakeEVaultCard = () => {
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <div
       style={{
-        height: "75px",
+        height: expanded ? "150px" : "75px",
         background: "white",
         borderRadius: "5px",
         border: "1px solid black",
@@ -15,21 +16,26 @@ const StakeEVaultCard = () => {
         flexDirection: "column",
         alignItems: "center"
       }}
+      onClick={() => setExpanded(!expanded)}
     >
-      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}>
-        <div className="stake-evault-card-title">Stake eVault</div>
-        <div className="stake-evault-card-text">Stake eVault, Earn Evault</div>
-      </div>
-      <div style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
-        <div style={{ display: "flex", alignSelf: "flex-start" }}>
-          <img src={StakeLogo} alt="StakeLogo" width="30px" />
-          <img src={StakeLogo} alt="StakeLogo" width="20px" className="second-logo" />
+              <div style={{ 
+          height: "100%",
+          width: "30%",
+          background: "black",
+          color: "white",
+          display: "flex",
+          alignSelf: "flex-end",
+          border: "5px solid black"
+        }}>
+          {expanded ? "Hide Info!" : "Display Info!"}
         </div>
-        <div style={{ display: "flex", alignSelf: "flex-end", paddingRight: "10px" }}>
-          <Button type="primary">Approve</Button>
-        </div>
+        {expanded && (
+          <div style={{ display: "flex", alignSelf: "flex-end", paddingRight: "10px", paddingBottom: "10px" }}>
+            <Button type="primary">Approve</Button>
+          </div>
+        )}
       </div>
-    </div>
+
   );
 };
 

@@ -1,16 +1,1 @@
-
-.env
-
-package.json
-node_modules
-dist
-
-imports/
-build
-
-deployments/
-exports/
-generated/
-
-yarn.lock
-package-lock.json
+**

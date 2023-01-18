@@ -25,8 +25,7 @@ const HeaderButtons: React.FC<HeaderButtonsProps> = ({ currentView, setCurrentVi
         <AiFillHome />
         {hover && (
           <div className="icon-text" style={{ marginLeft: "10px" }}>
-            Home
-          </div>
+          Home</div>
         )}
       </div>
       <div
@@ -36,8 +35,7 @@ const HeaderButtons: React.FC<HeaderButtonsProps> = ({ currentView, setCurrentVi
         <BsCashCoin />
         {hover && (
           <div className="icon-text" style={{ marginLeft: "10px" }}>
-            Pools
-          </div>
+          Pools</div>
         )}
       </div>
 
@@ -48,8 +46,7 @@ const HeaderButtons: React.FC<HeaderButtonsProps> = ({ currentView, setCurrentVi
         <GiFarmTractor />
         {hover && (
           <div className="icon-text" style={{ marginLeft: "10px" }}>
-            Farms
-          </div>
+          Farms</div>
         )}
       </div>
     </div>

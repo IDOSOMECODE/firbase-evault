@@ -8,22 +8,32 @@
   position: relative;
 }
 
+.header-button svg {
+   width: 30px;
+   height: 30px;
+}
+
 .header-button-container.hover {
-  width: 140px;
+  width: 160px;
 }
 
 .header-button-container {
   position: fixed;
   left: 0;
-  top: 40px;
+  top: 30px;
   bottom: 0;
   width: 70px;
   background-color: #333333;
   cursor: pointer;
   padding-left: 18px;
-  transition: width 0.5s;
+  transition: width 1s;
 }
 
-.icon-text {
-  color: grey;
+.header-button .icon-text {
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.5s ease-in-out;
 }
+
