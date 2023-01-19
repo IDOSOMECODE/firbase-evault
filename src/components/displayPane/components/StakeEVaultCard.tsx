@@ -121,6 +121,35 @@ border: "none",
 
 )}
         </div>
+        {width < 768 && expanded &&(
+        <div
+          style={{
+            position: "absolute",
+            fontSize: "10px",
+            left: "10%",
+            paddingTop: "220px",
+            transform: "translate(-50%, -50%)",
+fontWeight: "bold",
+}}
+>
+<div>Earned:<div>100 EVLT</div></div>
+</div>
+)}
+{width < 768 && expanded &&(
+  <div
+  style={{
+  position: "absolute",
+  fontSize: "10px",
+  left: "30%",
+  paddingTop: "220px",
+  transform: "translate(-50%, -50%)",
+  fontWeight: "bold",
+  
+  }}
+  >
+  <div>Total Staked:<div>10000 EVLT</div></div>
+  </div>
+  )}
     </div>
   
     
