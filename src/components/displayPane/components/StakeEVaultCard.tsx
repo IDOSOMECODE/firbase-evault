@@ -4,10 +4,12 @@ import { BiArrowToTop } from "react-icons/bi";
 import logo from "../components/Logos/0xeE34Af939a75223571ac818f0958b67cba48cd01.png";
 import { Button } from "antd";
 import { useWindowWidthAndHeight } from "../../../hooks/useWindowWidthAndHeight";
+import { Modal } from 'antd';
 
 const StakeEVaultCard = () => {
   const [expanded, setExpanded] = useState(false);
   const [width] = useWindowWidthAndHeight();
+  const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <div
@@ -104,19 +106,19 @@ fontWeight: "bold",
 }}
 >
 {expanded && (
-<Button shape="round" type="primary" style={{
-height: "40px",
-padding: "0 20px",
-textAlign: "center",
-fontWeight: "600",
-letterSpacing: "0.2px",
-fontSize: "15px",
-margin: "20px 20px",
-border: "none",
-  background: "black",
-  color: "white"}}>
-    approve
-</Button>
+    <Button shape="round" type="primary" style={{
+      height: "40px",
+      padding: "0 20px",
+      textAlign: "center",
+      fontWeight: "600",
+      letterSpacing: "0.2px",
+      fontSize: "15px",
+      margin: "20px 20px",
+      border: "none",
+        background: "black",
+        color: "white"}} onClick={()=>setModalVisible(!modalVisible)} >
+          approve
+      </Button>
 
 
 )}
@@ -149,7 +151,17 @@ fontWeight: "bold",
   >
   <div>Total Staked:<div>10000 EVLT</div></div>
   </div>
-  )}
+  )} <Modal
+  title="Wait until launch"
+  visible={modalVisible}
+  onCancel={() => setModalVisible(false)}
+  okButtonProps={{ style: { display: 'none' } }}
+  cancelText="Close"
+>
+  <p>
+    The feature is not yet launched, please wait for the launch
+  </p>
+</Modal>
     </div>
   
     
