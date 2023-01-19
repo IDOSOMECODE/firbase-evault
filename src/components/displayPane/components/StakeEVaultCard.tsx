@@ -108,11 +108,13 @@ fontWeight: "bold",
 {expanded && (
     <Button shape="round" type="primary" style={{
       height: "40px",
-      padding: "0 20px",
+      
+      padding: "0 30px",
       textAlign: "center",
       fontWeight: "600",
       letterSpacing: "0.2px",
       fontSize: "15px",
+      left: "20%",
       margin: "20px 20px",
       border: "none",
         background: "black",
