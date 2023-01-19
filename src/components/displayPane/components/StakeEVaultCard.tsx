@@ -1,42 +1,31 @@
 import { useState } from "react";
-import { Button } from "antd";
 import "./StakeEVaultCard.css";
-//import StakeLogo from "./Logos/0xeE34Af939a75223571ac818f0958b67cba48cd01.png";
+import { BiArrowFromTop } from "react-icons/bi";
+import { BiArrowToTop } from "react-icons/bi";
+
 const StakeEVaultCard = () => {
-  const [expanded, setExpanded] = useState(false);
+const [expanded, setExpanded] = useState(false);
 
-  return (
-    <div
-      style={{
-        height: expanded ? "150px" : "75px",
-        background: "white",
-        borderRadius: "5px",
-        border: "1px solid black",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center"
-      }}
-      onClick={() => setExpanded(!expanded)}
-    >
-              <div style={{ 
-          height: "100%",
-          width: "30%",
-          background: "black",
-          color: "white",
-          display: "flex",
-          alignSelf: "flex-end",
-          border: "5px solid black"
-        }}>
-          {expanded ? "Hide Info!" : "Display Info!"}
-        </div>
-        {expanded && (
-          <div style={{ display: "flex", alignSelf: "flex-end", paddingRight: "10px", paddingBottom: "10px" }}>
-            <Button type="primary">Approve</Button>
-          </div>
-        )}
-      </div>
-
-  );
+return (
+<div
+style={{
+height: expanded ? "150px" : "75px",
+background: "white",
+borderRadius: "5px",
+border: "1px solid black",
+display: "flex",
+position: "relative"
+}}
+onClick={() => setExpanded(!expanded)}
+>
+<div style={{ position: "absolute", bottom: -20, right: 30, padding: "10px" ,paddingRight: "30 px", fontSize: "30px" }}>
+{!expanded ? <BiArrowFromTop /> : <BiArrowToTop />}
+</div>
+<div style={{ position: "absolute", bottom: "30px", right: "10px" }}>
+{!expanded ? "More Info!" : "Less Info!"}
+</div>
+</div>
+);
 };
 
 export default StakeEVaultCard;

@@ -2,7 +2,6 @@ import { Divider } from "antd";
 
 import { useWindowWidthAndHeight } from "../../hooks/useWindowWidthAndHeight";
 import StakeEVaultCard from "./components/StakeEVaultCard";
-import StakeEVaultCardUSDT from "./components/StakeEVaultCardUSDT";
 import "./Pools.css";
 
 const styles = {
@@ -64,9 +63,6 @@ const Pools: React.FC = () => {
           <div style={{ display: "block" }}>
             <div className="card">
               <StakeEVaultCard />
-            </div>
-            <div className="card">
-              <StakeEVaultCardUSDT />
             </div>
           </div>
           <div style={styles.action}>
