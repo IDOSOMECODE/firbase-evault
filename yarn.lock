@@ -3294,7 +3294,7 @@
   dependencies:
     "@web3-react/types" "^8.0.20-beta.0"
 
-"@web3-react/core@8.0.35-beta.0":
+"@web3-react/core@^8.0.35-beta.0":
   "integrity" "sha512-vkEL2Vafu57lTA9T/cd3DNkZoDZ3G/JDUgxgjHqKLQVF4bPucrkeErqIHutAJ4suIi4bLOD0dFPMpFs+Bq7RgA=="
   "resolved" "https://registry.npmjs.org/@web3-react/core/-/core-8.0.35-beta.0.tgz"
   "version" "8.0.35-beta.0"

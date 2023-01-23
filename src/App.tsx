@@ -3,7 +3,6 @@ import { Buffer } from "buffer";
 import { useState } from "react";
 
 import { Layout } from "antd";
-
 import background from "./assets/images/background.jpg";
 import eVaultLogo from "./assets/images/eVaultLogo.png";
 import ConnectAccount from "./components/Account/ConnectAccount";
@@ -23,7 +22,7 @@ const styles = {
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-    fontFamily: "Sora, sans-serif"
+    fontFamily: "Exo, sans-serif"
   },
   header: {
     position: "fixed",
