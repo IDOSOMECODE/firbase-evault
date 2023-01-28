@@ -17,7 +17,7 @@ const StakeCard: React.FC<StakeCardProps> = (props) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     return (
-        <div className="stake-card" style={{ height: isExpanded ? '350px' : '125px' }}>
+        <div className="stake-card" style={{ height: isExpanded ? '250px' : '125px' }}>
             <div className="stake-card-header" style={{ paddingLeft: '15px'}}>
                 <img src={props.logo} alt={props.manualEVault} className="stake-card-logo" />
                 <div className="stake-card-info">
@@ -31,7 +31,7 @@ const StakeCard: React.FC<StakeCardProps> = (props) => {
                         <p className="stat-value">{props.apy}%</p>
                         <p className="stat-label">APY</p>
                     </div>
-                    <div className="stat">
+                    <div className="stat2">
                         <p className="stat-value">{props.totalStaked}</p>
                         <p className="stat-label">Total Staked</p>
                     </div>
@@ -45,17 +45,14 @@ const StakeCard: React.FC<StakeCardProps> = (props) => {
                     <div className="expanded-header">
                         <img src={props.logo} alt={props.manualEVault} className="stake-card-logo" />
                         <div className="stake-card-info">
-                            <h3 className="stake-card-title">Recent eVault Profit</h3>
+                            <h3 className="stake-card-title2">Recent Profit</h3>
                             <p className="stake-card-subtitle">{props.recentEVaultProfit}</p>
                         </div>
                     </div>
                     <div className="expanded-body">
                         <div className="expanded-actions">
-                            <a href={props.viewContractLink}>View Contract</a>
-                            <a href={props.connectLink}>
-                                <button>Connect</button>
-                                <p>START STAKING</p>
-                            </a>
+                        <p style={{fontSize: "13px", fontWeight: "bold"}}>START STAKING</p>
+                        <button>Connect</button>
                         </div>
                         </div>
                         </div>

@@ -1,5 +1,5 @@
 .stake-card {
-    width: 300px;
+    width: 100%;
     height: 125px;
     background-color: #ffffff;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
@@ -30,6 +30,11 @@
     font-weight: 600;
 }
 
+.stake-card-title2 {
+    margin: 0;
+    font-weight: 300;
+}
+
 .stake-card-subtitle {
     margin: 0;
     font-size: 12px;
@@ -41,6 +46,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-align: center;
 }
 
 .stake-card-stats {
@@ -48,9 +54,16 @@
 }
 
 .stat {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.stat2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin-right: 15px;
 }
 
@@ -76,12 +89,16 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
+    float: right;
+    margin-right: 15px;
+    
+    }
 
-.stake-card-expanded {
-    background-color: #f5f5f5;
-    padding: 15px;
-}
+    .stake-card-expanded {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
 .expanded-header {
     display: flex;
@@ -91,16 +108,19 @@
 .expanded-body {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-top: 15px;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 15px;
+    
+    
 }
+
 
 .expanded-actions a {
     text-decoration: none;
     color: #3f51b5;
     font-size: 14px;
     font-weight: 600;
-    margin-right: 15px;
 }
 
 .expanded-actions button {
@@ -109,8 +129,10 @@
     color: #ffffff;
     font-size: 14px;
     font-weight: 600;
-    padding: 8px;
+    padding: 6px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+
+    
 }
