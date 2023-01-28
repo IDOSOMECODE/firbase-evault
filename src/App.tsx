@@ -1,30 +1,25 @@
-import { Buffer } from "buffer";
-
 import { useState } from "react";
-
+import { ConnectWallet } from "@thirdweb-dev/react";
+import "./styles/Home.css";
+import background from "./Image/background.jpg";
 import { Layout } from "antd";
-import background from "./assets/images/background.jpg";
-import eVaultLogo from "./assets/images/eVaultLogo.png";
-import ConnectAccount from "./components/Account/ConnectAccount";
-import ChainSelector from "./components/ChainSelector";
-import ButtomButtons from "./components/displayPane/components/ButtomButtons";
-import HeaderButtons from "./components/displayPane/components/HeaderButtons";
-import DisplayPane from "./components/displayPane/DisplayPane";
-import Pools from "./components/displayPane/Pools";
-import "./App.css";
-import { useWindowWidthAndHeight } from "./hooks/useWindowWidthAndHeight";
+import { Header } from "antd/es/layout/layout";
+import HeaderButtons from "./Components/HeaderButtons";
+import ButtomButtons from "./Components/ButtomButtons";
+import DisplayPane from "./Components/DisplayPane";
+import eVaultLogo from "./Image/eVaultLogo.png";
+import Pools from "./Components/Pools";
 
-const { Header } = Layout;
+import { useWindowWidthAndHeight } from "./Hooks/useWindowWidthAndHeight";
 
 const styles = {
   layout: {
     backgroundImage: `url(${background})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
     fontFamily: "Exo, sans-serif"
   },
-  header: {
+  Header: {
     position: "fixed",
     zIndex: 1,
     width: "100%",
@@ -36,10 +31,8 @@ const styles = {
   },
   headerRight: {
     display: "flex",
-    gap: "10px",
-    alignItems: "center",
+    paddingTop: "15px",
     paddingRight: "10px",
-    paddingBottom: "15px",
     fontSize: "15px",
     fontWeight: "600"
   },
@@ -54,36 +47,32 @@ const styles = {
   }
 } as const;
 
-function App() {
+export default function Home() {
   const [currentView, setCurrentView] = useState("home");
   const [width] = useWindowWidthAndHeight();
 
-  if (!window.Buffer) window.Buffer = Buffer;
 
   return (
     <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
-      <Layout style={styles.layout}>
-        <Header style={{ ...styles.header, justifyContent: "flex-end" }}>
-          <div style={{ position: "absolute", top: "10px", left: "10px", zIndex: 1 }}>
+    <Layout style={styles.layout}>
+      <Header style={{ ...styles.Header, justifyContent: "flex-end" }}>
+      <div style={{ position: "absolute", top: "10px", left: "10px", zIndex: 1 }}>
             <img src={eVaultLogo} alt="eVaultLogo" width="50px" />
           </div>
-          <div style={styles.headerRight}>
-            <ChainSelector />
-            <ConnectAccount />
-          </div>
-          <div style={{ display: "flex", justifyContent: "flex-start" }}>
+        <div style={styles.headerRight} className="connect">
+        <ConnectWallet accentColor="white" colorMode="light" />
+        </div>
+        <div style={{ display: "flex", justifyContent: "flex-start" }}>
             {width > 768 && (
               <div>
                 <HeaderButtons currentView={currentView} setCurrentView={setCurrentView} />
               </div>
             )}
           </div>
-        </Header>
-        {width <= 768 && <ButtomButtons currentView={currentView} setCurrentView={setCurrentView} />}
+      </Header>
+      {width <= 768 && <ButtomButtons currentView={currentView} setCurrentView={setCurrentView} />}
         <div style={styles.content}>{currentView === "home" ? <DisplayPane /> : <Pools />}</div>
-      </Layout>
-    </div>
-  );
+    </Layout>
+  </div>
+);
 }
-
-export default App;

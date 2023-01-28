@@ -1,17 +1,24 @@
 import React from "react";
-
-import { Web3ReactProvider } from "@web3-react/core";
 import { createRoot } from "react-dom/client";
-
 import App from "./App";
-import connectors from "./connectors";
-import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
+import "./styles/globals.css";
 
-const root = createRoot(document.getElementById("root") as HTMLElement);
+// This is the chainId your dApp will work on.
+const activeChainId = ChainId.BinanceSmartChainMainnet;
+
+const container = document.getElementById("root");
+const root = createRoot(container!);
 root.render(
   <React.StrictMode>
-    <Web3ReactProvider connectors={connectors}>
+    <ThirdwebProvider desiredChainId={activeChainId}>
       <App />
-    </Web3ReactProvider>
+    </ThirdwebProvider>
   </React.StrictMode>
 );
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

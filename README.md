@@ -1,93 +1,38 @@
-<div align="center">
-<h1><strong> Web3 Boilerplate </strong></h1>
+## Getting Started
 
-[![Stargazers](https://img.shields.io/github/stars/Pedrojok01/Web3-Boilerplate)](https://github.com/Pedrojok01/Web3-Boilerplate/stargazers)
-[![Issues](https://img.shields.io/github/issues/Pedrojok01/Web3-Boilerplate)](https://github.com/Pedrojok01/Web3-Boilerplate/issues)
-[![MIT License](https://img.shields.io/github/license/Pedrojok01/Web3-Boilerplate)](https://github.com/Pedrojok01/Web3-Boilerplate/blob/main/License)
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black)](https://www.linkedin.com/in/pierre-e/)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/3c3b76de-6191-4ab2-b2c6-a5d824f6fe2f/deploy-status)](https://app.netlify.com/sites/web3-boilerplate/deploys)
+Create a project using this example:
 
-<br></br>
-
-![Preview](./src/assets/images/preview.gif)
-
-</div>
-
-## Disclaimer
-
-1. This is a work in progress...
-2. Just getting started with Typescript and no React expert on top of that, so any contribution/improvment pull-request is more than welcomed!
-
-## Description
-
-Simple and minimalist Web3 boilerplate to boost your Dapp development. Don't waste time setting up CRA, Typescript, react-script v5 polyfill, and connecting metamask and other wallets any longer. Instead, get this web3-boilerplate and start coding right away with the latest stack available out there!
-
-Try it yourself: [https://web3-boilerplate.netlify.app/](https://web3-boilerplate.netlify.app/)
-
-## Built With
-
-- [![React][react.js]][react-url]
-- [![typescript]][typescript-url]
-- [![AntDesign]][antdesign-url]
-- [![web3react]][web3react-url]
-- [![prettier]][prettier-url]
-- [![ESLint]][eslint-url]
-
-## Installation
-
-### Make sure you have the following ready:
-
-- [node.js](https://nodejs.org/) installed (developped on LTS v16.16.0)
-- [typescript](https://www.typescriptlang.org/) installed (developped on v4.8.4)
-- [yarn](https://yarnpkg.com/) installed
-- [MetaMask](https://metamask.io/) (or any web3 compatible wallet) installed in your browser
-
-### Once your config is ready, create a new repo, open your favorite code editor, and clone the repo with the following cmd:
-
-```
-git clone https://github.com/Pedrojok01/Web3-Boilerplate.git .
+```bash
+npx thirdweb create --template cra-typescript-starter
 ```
 
-### Install all package dependancies by running:
+You can start editing the page by modifying `src/index.tsx`. The page auto-updates as you edit the file.
 
+On `src/index.tsx`, you'll find our `ThirdwebProvider` wrapping your app, this is necessary for our hooks to work.
+
+On `src/index.js`, you'll find our `ThirdwebProvider` wrapping your app, this is necessary for our [hooks](https://portal.thirdweb.com/react) and
+[UI Components](https://portal.thirdweb.com/ui-components) to work.
+
+### Deploy to IPFS
+
+Deploy a copy of your application to IPFS using the following command:
+
+```bash
+yarn deploy
 ```
-yarn install
-```
 
-<b>IMPORTANT: Double check your package.json to make sure you've installed the exact same version for all @web3-react packages. Since the version 8+ is still in beta, it may not be automatically installed.</b>
+## Learn More
 
-### start the web3-boilerplate:
+To learn more about thirdweb, React and CRA, take a look at the following resources:
 
-```
-yarn start
-```
+- [thirdweb React Documentation](https://docs.thirdweb.com/react) - learn about our React SDK.
+- [thirdweb TypeScript Documentation](https://docs.thirdweb.com/react) - learn about our JavaScript/TypeScript SDK.
+- [thirdweb Portal](https://docs.thirdweb.com/react) - check our guides and development resources.
+- [Create React App Documentation](https://facebook.github.io/create-react-app/docs/getting-started) - learn about CRA features.
+- [React documentation](https://reactjs.org/) - learn React.
 
-## Features:
+You can check out [the thirdweb GitHub organization](https://github.com/thirdweb-dev) - your feedback and contributions are welcome!
 
-- [x] Web3 Wallet (Metamask / Wallet connect / Coinbase)
-- [x] Chain selector
-- [ ] Hooks to query user's Native Balance / Token Balances
-- [ ] Hook to query user's NFTs
+## Join our Discord!
 
-<br></br>
-
-# Enjoy!!!
-
-### ⭐️ ... and don't forget to leave a star if you like it! ⭐️
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- MARKDOWN LINKS & IMAGES -->
-
-[react.js]: https://img.shields.io/badge/React_v18.2-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[react-url]: https://reactjs.org/
-[typescript]: https://img.shields.io/badge/typescript_v4.8.4-375BD2?style=for-the-badge&logo=typescript&logoColor=61DAFB
-[typescript-url]: https://www.typescriptlang.org/
-[web3react]: https://img.shields.io/badge/@web3react_v8.0-006600?style=for-the-badge&logo=web3-react&logoColor=4FC08D
-[web3react-url]: https://github.com/Uniswap/web3react#readme
-[antdesign]: https://img.shields.io/badge/AntDesign_v5.0.3-FF0000?style=for-the-badge&logo=AntDesign&logoColor=61DAFB
-[antdesign-url]: https://ant.design/
-[prettier]: https://img.shields.io/badge/Prettier-360D3A?style=for-the-badge&logo=Prettier&logoColor=61DAFB
-[prettier-url]: https://prettier.io/
-[eslint]: https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=ESLint&logoColor=61DAFB
-[eslint-url]: https://eslint.org/
+For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
