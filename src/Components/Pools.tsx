@@ -51,7 +51,7 @@ const Pools: React.FC = () => {
       <div style={styles.content}>
           <StakeCard 
     logo={eVaultLogo}
-    manualEVault={'eVault 1'}
+    manualEVault={'Manual eVault'}
     earnEVaultStake={'Earn by staking tokens'}
     apy={'5.4'}
     totalStaked={'1,000,000'}

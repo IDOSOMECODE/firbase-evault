@@ -37,13 +37,12 @@ const StakeCard: React.FC<StakeCardProps> = (props) => {
                     </div>
                 </div>
                 <div className="stake-card-actions">
-                    <button onClick={() => setIsExpanded(!isExpanded)}>Details</button>
+                <button onClick={() => setIsExpanded(!isExpanded)}>{isExpanded ? "Less Details" : "Details"}</button>
                 </div>
             </div>
             {isExpanded && (
                 <div className="stake-card-expanded">
                     <div className="expanded-header">
-                        <img src={props.logo} alt={props.manualEVault} className="stake-card-logo" />
                         <div className="stake-card-info">
                             <h3 className="stake-card-title2">Recent Profit</h3>
                             <p className="stake-card-subtitle">{props.recentEVaultProfit}</p>
