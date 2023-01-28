@@ -45,7 +45,7 @@ const Pools: React.FC = () => {
       <div style={styles.title}>Pools</div>
       <div style={styles.content}>
         All active pools, send me a dm if you want your token here
-        <a href="https://t.me/Aleksandee" target="_blank">
+        <a href="https://t.me/Aleksandee">
           https://t.me/Aleksandee
         </a>
       </div>

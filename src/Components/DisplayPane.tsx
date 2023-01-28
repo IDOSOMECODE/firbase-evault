@@ -41,6 +41,7 @@ const DisplayPane: React.FC = () => {
   const [width] = useWindowWidthAndHeight();
   const isMobile = width <= 768;
   const address = useAddress();
+  // eslint-disable-next-line
   const { contract, isLoading, error } = useContract("0xeE34Af939a75223571ac818f0958b67cba48cd01", EVAULTABI);
   const { data: balanceOf } = useContractRead(contract, "balanceOf", address)
   
