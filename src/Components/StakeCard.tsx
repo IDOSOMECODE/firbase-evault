@@ -16,8 +16,10 @@ interface StakeCardProps {
 const StakeCard: React.FC<StakeCardProps> = (props) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
+    
+
     return (
-        <div className="stake-card" style={{ height: isExpanded ? '250px' : '125px' }}>
+        <div className="stake-card" style={{ height: isExpanded ? '200px' : '125px' }}>
             <div className="stake-card-header" style={{ paddingLeft: '15px'}}>
                 <img src={props.logo} alt={props.manualEVault} className="stake-card-logo" />
                 <div className="stake-card-info">
@@ -51,7 +53,7 @@ const StakeCard: React.FC<StakeCardProps> = (props) => {
                     <div className="expanded-body">
                         <div className="expanded-actions">
                         <p style={{fontSize: "13px", fontWeight: "bold"}}>START STAKING</p>
-                        <button>Connect</button>
+                        <button>Enable</button>
                         </div>
                         </div>
                         </div>
