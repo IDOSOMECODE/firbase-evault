@@ -1,9 +1,7 @@
-
-
 import { useWindowWidthAndHeight } from "../Hooks/useWindowWidthAndHeight";
-
 import "./Pools.css";
-
+import  StakeCard  from './StakeCard';
+import eVaultLogo from "../Image/eVaultLogo.png";
 const Pools: React.FC = () => {
   const [width] = useWindowWidthAndHeight();
   const styles = {
@@ -51,11 +49,19 @@ const Pools: React.FC = () => {
       </div>
       
       <div style={styles.content}>
-          <div style={{ display: "block" }}>
-
+          <StakeCard 
+    logo={eVaultLogo}
+    manualEVault={'eVault 1'}
+    earnEVaultStake={'Earn by staking tokens'}
+    apy={'5.4'}
+    totalStaked={'1,000,000'}
+    detailsLink={'/evault1'}
+    recentEVaultProfit={'$10,000'}
+    viewContractLink={'https://example.com/evault1'}
+    connectLink={'https://example.com/connect'}
+/>
           </div>
       </div>
-    </div>
   );
 };
 
