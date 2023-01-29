@@ -42,10 +42,11 @@ const Pools: React.FC = () => {
     <div style={{ ...styles.container}}>
       <div style={styles.title}>Pools</div>
       <div style={styles.content}>
-        All active pools, send me a dm if you want your token here
-        <a href="https://t.me/Aleksandee">
-          https://t.me/Aleksandee
-        </a>
+        All active Pools
+        <div>Please send me a direct message if you wish to list your token.</div>
+        <div><a href="https://t.me/Aleksandee">
+          Click to contact.
+        </a></div>
       </div>
       
       <div style={styles.content}>

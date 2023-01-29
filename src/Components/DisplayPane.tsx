@@ -70,17 +70,16 @@ const DisplayPane: React.FC = () => {
           This is a beta version of the app, it will be updated along the way. This will become a DeFi app with lots of
           features !
         </p>
-        <p style={{ fontSize: "20px", marginTop: "5px" }}>
-        <b>Your Balance: {balanceOf && formatAmt(balanceOf?.toString())} eVault</b>
-
-      </p>
           <>
             <Divider />
             <div style={styles.action}>
               {!isMobile && <Divider type="vertical" style={{ fontSize: "120px !important" }} />}
             </div>
           </>
+          <p style={{ fontSize: "20px", marginTop: "5px" }}>
+        <b>Your Balance: {balanceOf && formatAmt(balanceOf?.toString())} eVault</b>
 
+      </p>
       </div>
     </div>
   );

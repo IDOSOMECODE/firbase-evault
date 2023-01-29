@@ -34,7 +34,8 @@ const styles = {
     paddingTop: "15px",
     paddingRight: "10px",
     fontSize: "15px",
-    fontWeight: "600"
+    fontWeight: "600",
+    position: "absolute", right: "-25px"
   },
   content: {
     display: "flex",
@@ -59,7 +60,7 @@ export default function Home() {
       <div style={{ position: "absolute", top: "10px", left: "10px", zIndex: 1 }}>
             <img src={eVaultLogo} alt="eVaultLogo" width="50px" />
           </div>
-        <div style={styles.headerRight} className="connect">
+        <div style={styles.headerRight } className="connect">
         <ConnectWallet accentColor="white" colorMode="light" />
         </div>
         <div style={{ display: "flex", justifyContent: "flex-start" }}>
