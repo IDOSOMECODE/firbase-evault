@@ -45,7 +45,6 @@ const DisplayPane: React.FC = () => {
   const { contract, isLoading, error } = useContract("0xeE34Af939a75223571ac818f0958b67cba48cd01", EVAULTABI);
   const { data: balanceOf } = useContractRead(contract, "balanceOf", address)
   
-
   function formatAmt(amt: any) {
     let a: any;
     if (BigNumber.isBigNumber(amt)) {
@@ -73,8 +72,7 @@ const DisplayPane: React.FC = () => {
         </p>
         <p style={{ fontSize: "20px", marginTop: "5px" }}>
         <b>Your Balance: {balanceOf && formatAmt(balanceOf?.toString())} eVault</b>
-        </p>
-        <p>
+
       </p>
           <>
             <Divider />
