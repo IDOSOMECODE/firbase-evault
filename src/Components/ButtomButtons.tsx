@@ -1,7 +1,7 @@
 import { AiFillHome } from "react-icons/ai";
 import { BsCashCoin } from "react-icons/bs";
 import { GiFarmTractor } from "react-icons/gi";
-
+import { BsKeyFill } from "react-icons/bs";
 import "./ButtomButtons.css";
 
 interface HeaderButtonsProps {
@@ -30,9 +30,13 @@ const ButtomButtons: React.FC<HeaderButtonsProps> = ({ setCurrentView }) => {
         <BsCashCoin />
         <p style={{ fontSize: "13px", marginTop: "-5px" }}>Pools</p>
       </div>
-      <div className="home-button" style={{ color: "white", fontSize: "30px" }} onClick={() => setCurrentView("farms")}>
+      <div className="home-button" style={{ color: "white", fontSize: "30px" }} onClick={() => setCurrentView("farm")}>
         <GiFarmTractor />
-        <p style={{ fontSize: "13px", marginTop: "-5px" }}>Farms</p>
+        <p style={{ fontSize: "13px", marginTop: "-5px" }}>Farm</p>
+      </div>
+      <div className="home-button" style={{ color: "white", fontSize: "30px" }} onClick={() => setCurrentView("login")}>
+        <BsKeyFill />
+        <p style={{ fontSize: "13px", marginTop: "-5px" }}>Login</p>
       </div>
     </div>
   );

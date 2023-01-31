@@ -4,6 +4,7 @@ import "./HeaderButtons.css";
 import { AiFillHome } from "react-icons/ai";
 import { BsCashCoin } from "react-icons/bs";
 import { GiFarmTractor } from "react-icons/gi";
+import { BsKeyFill } from "react-icons/bs";
 
 interface HeaderButtonsProps {
   currentView: string;
@@ -40,8 +41,8 @@ const HeaderButtons: React.FC<HeaderButtonsProps> = ({ currentView, setCurrentVi
       </div>
 
       <div
-        className={`header-button ${currentView === "farms" && "active"} ${hover ? "hover" : ""}`}
-        onClick={() => setCurrentView("farms")}
+        className={`header-button ${currentView === "farm" && "active"} ${hover ? "hover" : ""}`}
+        onClick={() => setCurrentView("farm")}
       >
         <GiFarmTractor />
         {hover && (
@@ -49,6 +50,19 @@ const HeaderButtons: React.FC<HeaderButtonsProps> = ({ currentView, setCurrentVi
           Farms</div>
         )}
       </div>
+
+      <div
+        className={`header-button ${currentView === "login" && "active"} ${hover ? "hover" : ""}`}
+        onClick={() => setCurrentView("login")}
+      >
+        <BsKeyFill />
+        {hover && (
+          <div className="icon-text" style={{ marginLeft: "10px" }}>
+          Login</div>
+        )}
+      </div>
+
+
     </div>
   );
 };

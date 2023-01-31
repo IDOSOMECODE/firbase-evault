@@ -11,7 +11,8 @@ import eVaultLogo from "./Image/eVaultLogo.png";
 import Pools from "./Components/Pools";
 
 import { useWindowWidthAndHeight } from "./Hooks/useWindowWidthAndHeight";
-
+import Farm from "./Components/Farm";
+import Login from "./Components/Login";
 const styles = {
   layout: {
     backgroundImage: `url(${background})`,
@@ -72,7 +73,13 @@ export default function Home() {
           </div>
       </Header>
       {width <= 768 && <ButtomButtons currentView={currentView} setCurrentView={setCurrentView} />}
-        <div style={styles.content}>{currentView === "home" ? <DisplayPane /> : <Pools />}</div>
+      <div style={styles.content}> 
+          {currentView === "home" ? <DisplayPane /> 
+          : currentView === "pools" ? <Pools /> 
+          : currentView === "farm" ? <Farm /> 
+          : currentView === "login" ? <Login /> 
+          : null}
+        </div>
     </Layout>
   </div>
 );
