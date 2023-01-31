@@ -1,16 +1,13 @@
 import { useState } from "react";
 import "./HeaderButtons.css";
-
+ // eslint-disable-next-line
+import { BrowserRouter as Route, Link } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
 import { BsCashCoin } from "react-icons/bs";
 import { GiFarmTractor } from "react-icons/gi";
 import { BsKeyFill } from "react-icons/bs";
 
-interface HeaderButtonsProps {
-  currentView: string;
-  setCurrentView: (view: string) => void;
-}
-const HeaderButtons: React.FC<HeaderButtonsProps> = ({ currentView, setCurrentView }) => {
+const HeaderButtons: React.FC = () => {
   const [hover, setHover] = useState(false);
 
   return (
@@ -19,51 +16,52 @@ const HeaderButtons: React.FC<HeaderButtonsProps> = ({ currentView, setCurrentVi
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <div
-        className={`header-button ${currentView === "home" && "active"} ${hover ? "hover" : ""}`}
-        onClick={() => setCurrentView("home")}
-      >
+      <Link to="/">
+      <div className={`header-button ${hover ? "hover" : ""}`}>
         <AiFillHome />
         {hover && (
-          <div className="icon-text" style={{ marginLeft: "10px" }}>
-          Home</div>
-        )}
+        <div className="icon-text" style={{ marginLeft: "10px" }}>
+        Home
       </div>
-      <div
-        className={`header-button ${currentView === "pools" && "active"} ${hover ? "hover" : ""}`}
-        onClick={() => setCurrentView("pools")}
-      >
+    )}
+  </div>
+</Link>
+      <Link to="/pools">
+      <div className={`header-button ${hover ? "hover" : ""}`}>
         <BsCashCoin />
         {hover && (
-          <div className="icon-text" style={{ marginLeft: "10px" }}>
-          Pools</div>
-        )}
+        <div className="icon-text" style={{ marginLeft: "10px" }}>
+        Pools
       </div>
+    )}
+  </div>
+</Link>
 
-      <div
-        className={`header-button ${currentView === "farm" && "active"} ${hover ? "hover" : ""}`}
-        onClick={() => setCurrentView("farm")}
-      >
+      <Link to="/farm">
+      <div className={`header-button ${hover ? "hover" : ""}`}>
         <GiFarmTractor />
         {hover && (
-          <div className="icon-text" style={{ marginLeft: "10px" }}>
-          Farms</div>
-        )}
+        <div className="icon-text" style={{ marginLeft: "10px" }}>
+        Farm
       </div>
+    )}
+  </div>
+</Link>
 
-      <div
-        className={`header-button ${currentView === "login" && "active"} ${hover ? "hover" : ""}`}
-        onClick={() => setCurrentView("login")}
-      >
-        <BsKeyFill />
-        {hover && (
-          <div className="icon-text" style={{ marginLeft: "10px" }}>
-          Login</div>
-        )}
+      <Link to="/login">
+      <div className={`header-button ${hover ? "hover" : ""}`}>
+     <BsKeyFill />
+     {hover && (
+        <div className="icon-text" style={{ marginLeft: "10px" }}>
+        Login
       </div>
+    )}
+  </div>
+</Link>
 
 
     </div>
+
   );
 };
 

@@ -1,45 +1,44 @@
+ // eslint-disable-next-line
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
 import { BsCashCoin } from "react-icons/bs";
 import { GiFarmTractor } from "react-icons/gi";
 import { BsKeyFill } from "react-icons/bs";
 import "./ButtomButtons.css";
 
-interface HeaderButtonsProps {
-  currentView: string;
-  setCurrentView: (view: string) => void;
-}
+const ButtomButtons: React.FC = () => {
+return (
 
-const ButtomButtons: React.FC<HeaderButtonsProps> = ({ setCurrentView }) => {
-  return (
-    <div
-      style={{
-        position: "fixed",
-        bottom: "0",
-        width: "100%",
-        display: "flex",
-        justifyContent: "space-around",
-        backgroundColor: "#333333",
-        paddingTop: "8px"
-      }}
-    >
-      <div className="home-button" style={{ color: "white", fontSize: "30px" }} onClick={() => setCurrentView("home")}>
-        <AiFillHome />
-        <p style={{ fontSize: "13px", marginTop: "-5px" }}>Home</p>
-      </div>
-      <div className="home-button" style={{ color: "white", fontSize: "30px" }} onClick={() => setCurrentView("pools")}>
-        <BsCashCoin />
-        <p style={{ fontSize: "13px", marginTop: "-5px" }}>Pools</p>
-      </div>
-      <div className="home-button" style={{ color: "white", fontSize: "30px" }} onClick={() => setCurrentView("farm")}>
-        <GiFarmTractor />
-        <p style={{ fontSize: "13px", marginTop: "-5px" }}>Farm</p>
-      </div>
-      <div className="home-button" style={{ color: "white", fontSize: "30px" }} onClick={() => setCurrentView("login")}>
-        <BsKeyFill />
-        <p style={{ fontSize: "13px", marginTop: "-5px" }}>Login</p>
-      </div>
-    </div>
-  );
+<div
+style={{
+position: "fixed",
+bottom: "0",
+width: "100%",
+display: "flex",
+justifyContent: "space-around",
+backgroundColor: "#333333",
+paddingTop: "8px"
+}}
+>
+<Link to="/" className="home-button" style={{ color: "white", fontSize: "30px" }}>
+<AiFillHome />
+<p style={{ fontSize: "13px", marginTop: "-5px" }}>Home</p>
+</Link>
+<Link to="/pools" className="home-button" style={{ color: "white", fontSize: "30px" }}>
+<BsCashCoin />
+<p style={{ fontSize: "13px", marginTop: "-5px" }}>Pools</p>
+</Link>
+<Link to="/farm" className="home-button" style={{ color: "white", fontSize: "30px" }}>
+<GiFarmTractor />
+<p style={{ fontSize: "13px", marginTop: "-5px" }}>Farm</p>
+</Link>
+<Link to="/login" className="home-button" style={{ color: "white", fontSize: "30px" }}>
+<BsKeyFill />
+<p style={{ fontSize: "13px", marginTop: "-5px" }}>Login</p>
+</Link>
+</div>
+
+);
 };
 
 export default ButtomButtons;

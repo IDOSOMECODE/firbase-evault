@@ -1,5 +1,6 @@
-import { useState } from "react";
+import React from "react";
 import { ConnectWallet } from "@thirdweb-dev/react";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import "./styles/Home.css";
 import background from "./Image/background.jpg";
 import { Layout } from "antd";
@@ -8,10 +9,10 @@ import HeaderButtons from "./Components/HeaderButtons";
 import ButtomButtons from "./Components/ButtomButtons";
 import DisplayPane from "./Components/DisplayPane";
 import eVaultLogo from "./Image/eVaultLogo.png";
-import Pools from "./Components/Pools";
 
 import { useWindowWidthAndHeight } from "./Hooks/useWindowWidthAndHeight";
 import Farm from "./Components/Farm";
+import Pools from "./Components/Pools";
 import Login from "./Components/Login";
 const styles = {
   layout: {
@@ -50,11 +51,10 @@ const styles = {
 } as const;
 
 export default function Home() {
-  const [currentView, setCurrentView] = useState("home");
   const [width] = useWindowWidthAndHeight();
 
-
   return (
+    <BrowserRouter>
     <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
     <Layout style={styles.layout}>
       <Header style={{ ...styles.Header, justifyContent: "flex-end" }}>
@@ -67,20 +67,23 @@ export default function Home() {
         <div style={{ display: "flex", justifyContent: "flex-start" }}>
             {width > 768 && (
               <div>
-                <HeaderButtons currentView={currentView} setCurrentView={setCurrentView} />
+                <HeaderButtons />
               </div>
             )}
           </div>
       </Header>
-      {width <= 768 && <ButtomButtons currentView={currentView} setCurrentView={setCurrentView} />}
+      
+      {width <= 768 && <ButtomButtons />}
       <div style={styles.content}> 
-          {currentView === "home" ? <DisplayPane /> 
-          : currentView === "pools" ? <Pools /> 
-          : currentView === "farm" ? <Farm /> 
-          : currentView === "login" ? <Login /> 
-          : null}
-        </div>
+      <Routes>
+      <Route path="/" element={<DisplayPane />} />
+      <Route path="/pools" element={<Pools />} />
+      <Route path="/farm" element={<Farm />} />
+      <Route path="/login" element={<Login />} />
+      </Routes>
+      </div>
     </Layout>
   </div>
+  </BrowserRouter>
 );
 }
