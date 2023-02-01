@@ -4,6 +4,7 @@ import { AiFillHome } from "react-icons/ai";
 import { BsCashCoin } from "react-icons/bs";
 import { GiFarmTractor } from "react-icons/gi";
 import { BsKeyFill } from "react-icons/bs";
+import { GiCash } from "react-icons/gi";
 import "./ButtomButtons.css";
 
 const ButtomButtons: React.FC = () => {
@@ -35,6 +36,10 @@ paddingTop: "8px"
 <Link to="/login" className="home-button" style={{ color: "white", fontSize: "30px" }}>
 <BsKeyFill />
 <p style={{ fontSize: "13px", marginTop: "-5px" }}>Login</p>
+</Link>
+<Link to="/lottery" className="home-button" style={{ color: "white", fontSize: "30px" }}>
+<GiCash />
+<p style={{ fontSize: "13px", marginTop: "-5px" }}>Lottery</p>
 </Link>
 </div>
 

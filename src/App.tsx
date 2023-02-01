@@ -14,6 +14,8 @@ import { useWindowWidthAndHeight } from "./Hooks/useWindowWidthAndHeight";
 import Farm from "./Components/Farm";
 import Pools from "./Components/Pools";
 import Login from "./Components/Login";
+import Lottery from "./Components/Lottery";
+
 const styles = {
   layout: {
     backgroundImage: `url(${background})`,
@@ -80,6 +82,7 @@ export default function Home() {
       <Route path="/pools" element={<Pools />} />
       <Route path="/farm" element={<Farm />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/lottery" element={<Lottery />} />
       </Routes>
       </div>
     </Layout>

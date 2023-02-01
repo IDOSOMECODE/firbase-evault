@@ -6,6 +6,7 @@ import { AiFillHome } from "react-icons/ai";
 import { BsCashCoin } from "react-icons/bs";
 import { GiFarmTractor } from "react-icons/gi";
 import { BsKeyFill } from "react-icons/bs";
+import { GiCash } from "react-icons/gi";
 
 const HeaderButtons: React.FC = () => {
   const [hover, setHover] = useState(false);
@@ -59,6 +60,16 @@ const HeaderButtons: React.FC = () => {
   </div>
 </Link>
 
+<Link to="/lottery">
+      <div className={`header-button ${hover ? "hover" : ""}`}>
+     <GiCash />
+     {hover && (
+        <div className="icon-text" style={{ marginLeft: "10px" }}>
+        Lottery
+      </div>
+    )}
+  </div>
+</Link>
 
     </div>
 
