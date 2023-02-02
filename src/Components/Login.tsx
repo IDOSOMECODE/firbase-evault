@@ -41,10 +41,12 @@ const Login: React.FC = () => {
       margin: "auto",
       padding: "30px 0",
       borderRadius: "20px",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center"
-    },
+      alignItems: "center",
+      textAlign: "center"
+    }
+    
+    
+    ,
     title: {
       color: "black",
       fontWeight: 600,
@@ -76,11 +78,11 @@ const Login: React.FC = () => {
   
     <img src={ProfilePicture} alt="ProfilePicture" width="150px" style={{margin: "30px 0", display: "block",  marginLeft: "auto", marginRight: "auto"}} />
       <div style={{margin: "30px 0"}}>
-        <label style={{display: "block",marginLeft: "10%" ,fontWeight: "bold"}}>
-          Username: </label>
+        <label style={{display: "block" ,fontWeight: "bold"}}>
+          Username </label>
           <input type="text" name="username" value={loginData.username} onChange={handleInputChange} style={{display: "block", width: "80%", padding: "10px", margin: "10px 0", marginLeft: "auto", marginRight: "auto"}} />
-        <label style={{display: "block",marginLeft: "10%",fontWeight: "bold"}}>
-          Password:
+        <label style={{display: "block",fontWeight: "bold"}}>
+          Password
           </label>
           <input type="password" name="password" value={loginData.password} onChange={handleInputChange} style={{display: "block", width: "80%", padding: "10px", margin: "10px 0",  marginLeft: "auto", marginRight: "auto"}} />
   

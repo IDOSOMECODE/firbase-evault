@@ -6,8 +6,12 @@
     border-radius: 8px;
     padding-top: 4;
     margin: auto;
+    display: flex;
+    flex-direction: column;
     
 }
+
+
 
 .button-box {
     background-color: #ffffffab;
