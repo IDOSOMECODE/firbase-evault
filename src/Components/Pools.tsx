@@ -7,7 +7,7 @@ const Pools: React.FC = () => {
   const styles = {
     container: {
       background: "#f5f4f4",
-      width: width <= 768 ? "100%" : "90%",
+      width: width <= 768 ? "80%" : "80%",
       minWidth: "400px",
       maxWidth: "900px",
       textAlign: "center",
