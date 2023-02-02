@@ -1,37 +1,49 @@
 import { useWindowWidthAndHeight } from "../Hooks/useWindowWidthAndHeight";
-import "./Pools.css";
-import { Formik, Field, Form, ErrorMessage } from "formik";
-import * as Yup from "yup";
+import "./Login.css";
+import { useState } from "react";
+import ProfilePicture from "../Image/ProfilePicture.png";
+
+
+interface LoginData {
+  username: string;
+  password: string;
+}
 
 const Login: React.FC = () => {
-  
-  const [width] = useWindowWidthAndHeight();
-  const initialValues = {
-    username: "",
-    password: "",
-  };
-
-  const validationSchema = Yup.object().shape({
-    username: Yup.string().required("Username is required"),
-    password: Yup.string().required("Password is required"),
+   const [width] = useWindowWidthAndHeight();
+  const [loginData, setLoginData] = useState<LoginData>({
+    username: '',
+    password: '',
   });
 
-  const handleLogin = () => {
-    // Perform API call or any other actions on form submit
-   
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setLoginData({
+      ...loginData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log('Submitting login data', loginData);
+    // Perform login logic here, e.g. making a network request to an API
   };
 
 
   const styles = {
+
+    
     container: {
       background: "#f5f4f4",
-      width: width <= 768 ? "100%" : "90%",
+      width: width <= 768 ? "100%" : "80%",
       minWidth: "400px",
       maxWidth: "900px",
-      textAlign: "center",
       margin: "auto",
       padding: "30px 0",
-      borderRadius: "20px"
+      borderRadius: "20px",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center"
     },
     title: {
       color: "black",
@@ -57,52 +69,32 @@ const Login: React.FC = () => {
   } as const;
 
   return (
-    <div style={styles.container}>
+    <div style={styles.container}> 
     <div style={styles.title}>Login</div>
-    <div className="col-md-12">
-      <div className="card card-container">
-        <img
-          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-          alt="profile-img"
-          className="profile-img-card"
-        />
-
-        <Formik
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-          onSubmit={handleLogin}
-        >
-          <Form>
-            <div className="form-group">
-              <label htmlFor="username">Username</label>
-              <Field name="username" type="text" className="form-control" />
-              <ErrorMessage
-                name="username"
-                component="div"
-                className="alert alert-danger"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <Field name="password" type="password" className="form-control" />
-              <ErrorMessage
-                name="password"
-                component="div"
-                className="alert alert-danger"
-              />
-            </div>
-
-            <div className="form-group">
-              <button type="submit" className="btn btn-primary btn-block">
-                Login
-              </button>
-            </div>
-          </Form>
-        </Formik>
+    <div className="box" >
+    <form onSubmit={handleSubmit}>
+  
+    <img src={ProfilePicture} alt="ProfilePicture" width="150px" style={{margin: "30px 0", display: "block",  marginLeft: "auto", marginRight: "auto"}} />
+      <div style={{margin: "30px 0"}}>
+        <label style={{display: "block",marginLeft: "10%" ,fontWeight: "bold"}}>
+          Username: </label>
+          <input type="text" name="username" value={loginData.username} onChange={handleInputChange} style={{display: "block", width: "80%", padding: "10px", margin: "10px 0", marginLeft: "auto", marginRight: "auto"}} />
+        <label style={{display: "block",marginLeft: "10%",fontWeight: "bold"}}>
+          Password:
+          </label>
+          <input type="password" name="password" value={loginData.password} onChange={handleInputChange} style={{display: "block", width: "80%", padding: "10px", margin: "10px 0",  marginLeft: "auto", marginRight: "auto"}} />
+  
+        <button type="submit" style={{display: "block", width: "35%", padding: "12px", margin: "10px 0", background: "blue", color: "white", border: "none", borderRadius: "5px",  marginLeft: "auto", marginRight: "auto"}}>Login</button>
       </div>
+      <div style={{textAlign: "center", margin: "30px 0"}}>
+        <label style={{marginRight: "10px"}}>Forgot password?</label>
+        <label>Register</label>
+      </div>
+  
+    </form>
     </div>
-  </div>
+    </div>
+ 
 );
 };
 
