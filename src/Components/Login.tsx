@@ -1,4 +1,4 @@
-import { useWindowWidthAndHeight } from "../Hooks/useWindowWidthAndHeight";
+
 import "./Login.css";
 import { useState } from "react";
 import ProfilePicture from "../Image/ProfilePicture.png";
@@ -10,7 +10,7 @@ interface LoginData {
 }
 
 const Login: React.FC = () => {
-   const [width] = useWindowWidthAndHeight();
+
   const [loginData, setLoginData] = useState<LoginData>({
     username: '',
     password: '',
@@ -35,7 +35,7 @@ const Login: React.FC = () => {
     
     container: {
       background: "#f5f4f4",
-      width: width <= 768 ? "80%" : "80%",
+      width: "80%",
       minWidth: "400px",
       maxWidth: "900px",
       margin: "auto",

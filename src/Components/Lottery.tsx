@@ -1,12 +1,12 @@
-import { useWindowWidthAndHeight } from "../Hooks/useWindowWidthAndHeight";
+
 import "./Pools.css";
 import Marquee from "react-fast-marquee";
 const Lottery: React.FC = () => {
-  const [width] = useWindowWidthAndHeight();
+
   const styles = {
     container: {
       background: "#f5f4f4",
-      width: width <= 768 ? "80%" : "80%",
+      width: "80%",
       minWidth: "400px",
       maxWidth: "900px",
       textAlign: "center",
