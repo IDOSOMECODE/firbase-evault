@@ -1,13 +1,13 @@
-import { useWindowWidthAndHeight } from "../Hooks/useWindowWidthAndHeight";
+
 import "./Pools.css";
 
 const Farm: React.FC = () => {
-  const [width] = useWindowWidthAndHeight();
+
   const styles = {
     container: {
       background: "#f5f4f4",
-      width: width <= 768 ? "80%" : "80%",
-      minWidth: "400px",
+      width: "80%",
+      minWidth: "340px",
       maxWidth: "900px",
       textAlign: "center",
       margin: "auto",
