@@ -15,6 +15,8 @@ import Farm from "./Components/Farm";
 import Pools from "./Components/Pools";
 import Login from "./Components/Login";
 import Lottery from "./Components/Lottery";
+import Register from "./Components/Register";
+import ForgotPassword from "./Components/ForgotPassword";
 
 const styles = {
   layout: {
@@ -83,6 +85,8 @@ export default function Home() {
       <Route path="/farm" element={<Farm />} />
       <Route path="/login" element={<Login />} />
       <Route path="/lottery" element={<Lottery />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/passwordreset" element={<ForgotPassword />} />
       </Routes>
       </div>
     </Layout>

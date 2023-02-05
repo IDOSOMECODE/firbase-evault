@@ -2,18 +2,22 @@
 import "./Login.css";
 import { useState } from "react";
 import ProfilePicture from "../Image/ProfilePicture.png";
-// eslint-disable-next-line
 import { BrowserRouter as Route, Link } from "react-router-dom";
+
 interface LoginData {
   username: string;
   password: string;
+  confirmPassword: string;
+  email: string;
 }
 
-const Login: React.FC = () => {
+const Register: React.FC = () => {
 
   const [loginData, setLoginData] = useState<LoginData>({
     username: '',
     password: '',
+    confirmPassword: '',
+    email: '',
   });
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -72,11 +76,10 @@ const Login: React.FC = () => {
 
   return (
     <div style={styles.container}> 
-    <div style={styles.title}>Login</div>
+    <div style={styles.title}>Register Account</div>
     <div className="box" >
     <form onSubmit={handleSubmit}>
-  
-    <img src={ProfilePicture} alt="ProfilePicture" width="150px" style={{margin: "30px 0", display: "block",  marginLeft: "auto", marginRight: "auto"}} />
+      <img src={ProfilePicture} alt="ProfilePicture" width="150px" style={{margin: "30px 0", display: "block",  marginLeft: "auto", marginRight: "auto"}} />
       <div style={{margin: "30px 0"}}>
         <label style={{display: "block" ,fontWeight: "bold"}}>
           Username </label>
@@ -85,21 +88,28 @@ const Login: React.FC = () => {
           Password
           </label>
           <input type="password" name="password" value={loginData.password} onChange={handleInputChange} style={{display: "block", width: "80%", padding: "10px", margin: "10px 0",  marginLeft: "auto", marginRight: "auto"}} />
+        <label style={{display: "block",fontWeight: "bold"}}>
+          Confirm Password
+          </label>
+          <input type="password" name="confirmPassword" value={loginData.confirmPassword} onChange={handleInputChange} style={{display: "block", width: "80%", padding: "10px", margin: "10px 0",  marginLeft: "auto", marginRight: "auto"}} />
+        {loginData.password !== loginData.confirmPassword && <div style={{color: "red"}}>Passwords do not match</div>}
+        <label style={{display: "block",fontWeight: "bold"}}>
+          Email
+          </label>
+          <input type="email" name="email" value={loginData.email} onChange={handleInputChange} style={{display: "block", width: "80%", padding: "10px", margin: "10px 0",  marginLeft: "auto", marginRight: "auto"}} />
+    <button type="submit" style={{display: "block", width: "35%", padding: "12px", margin: "10px 0", background: "blue", color: "white", border: "none", borderRadius: "5px",  marginLeft: "auto", marginRight: "auto"}}>Create Account</button>
+    </div>
+    <div style={{textAlign: "center", margin: "30px 0"}}>
+    <Link to="/login"><label style={{marginRight: "10px"}}>Already have an account?</label>
+      <label>Login</label></Link>
+    </div>
   
-        <button type="submit" style={{display: "block", width: "35%", padding: "12px", margin: "10px 0", background: "blue", color: "white", border: "none", borderRadius: "5px",  marginLeft: "auto", marginRight: "auto"}}>Login</button>
-      </div>
-      <div style={{textAlign: "center", margin: "30px 0"}}>
-      <Link to="/passwordreset"><label style={{marginRight: "10px"}}>Forgot password?</label>
-      </Link>
-      <Link to="/register"> <label>Register</label>
-      </Link>
-    </div>
-    </form>
-    </div>
-    </div>
+  </form>
+  </div>
+  </div>
  
 );
 };
 
 
-export default Login;
+export default Register;
