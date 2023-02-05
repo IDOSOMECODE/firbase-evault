@@ -2,6 +2,7 @@
 import "./Login.css";
 import { useState } from "react";
 import ProfilePicture from "../Image/ProfilePicture.png";
+// eslint-disable-next-line
 import { BrowserRouter as Route, Link } from "react-router-dom";
 
 interface LoginData {
