@@ -35,8 +35,8 @@ const Login: React.FC = () => {
     
     container: {
       background: "#f5f4f4",
-      width: "80%",
-      minWidth: "400px",
+      width: "90%",
+      minWidth: "140px",
       maxWidth: "900px",
       margin: "auto",
       padding: "30px 0",

@@ -6,8 +6,8 @@ const Farm: React.FC = () => {
   const styles = {
     container: {
       background: "#f5f4f4",
-      width: "80%",
-      minWidth: "340px",
+      width: "90%",
+      minWidth: "140px",
       maxWidth: "900px",
       textAlign: "center",
       margin: "auto",

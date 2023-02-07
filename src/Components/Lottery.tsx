@@ -6,8 +6,8 @@ const Lottery: React.FC = () => {
   const styles = {
     container: {
       background: "#f5f4f4",
-      width: "80%",
-      minWidth: "400px",
+      width: "90%",
+      minWidth: "140px",
       maxWidth: "900px",
       textAlign: "center",
       margin: "auto",
@@ -40,6 +40,7 @@ const Lottery: React.FC = () => {
   return (
     <div style={{ ...styles.container}}>
       <div style={styles.title}>Burn Lottery</div>
+      <div style={styles.content}>
       <Marquee style={{color: "gray", margin: "5px" }} gradient={false} speed={100} 
   >
           <div style={{display: "flex", justifyContent: "space-between", margin: "10px" }}>
@@ -52,7 +53,7 @@ const Lottery: React.FC = () => {
             </div>
           </div>
         </Marquee>
-      
+        </div>
 
       </div>
   );
