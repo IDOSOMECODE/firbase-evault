@@ -22,7 +22,7 @@ const Pools: React.FC = () => {
       marginBottom: "10px"
     },
     content: {
-      width: "85%",
+      width: "95%",
       margin: "auto",
       fontSize: "17px"
     },
