@@ -86,11 +86,11 @@ const closeModal = () => {
             <div className="stake-card-body">
                 <div className="stake-card-stats">
                     <div className="stat">
-                        <p className="stat-value">{props.apy}%</p>
+                        <p className="stat-value" style={{ fontSize: "14px" }}>{props.apy}%</p>
                         <p className="stat-label">APY</p>
                     </div>
                     <div className="stat2">
-                        <p className="stat-value">{props.totalStaked}</p>
+                        <p className="stat-value" style={{ fontSize: "14px" }}>{props.totalStaked}</p>
                         <p className="stat-label">Total Staked</p>
                     </div>
                 </div>
@@ -102,13 +102,13 @@ const closeModal = () => {
                 <div className="stake-card-expanded">
                     <div className="expanded-header">
                         <div className="stake-card-info">
-                            <h3 className="stake-card-title2">Recent Profit</h3>
+                            <h3 className="stake-card-title2" style={{ fontSize: "14px" }}>Recent Profit</h3>
                             <p className="stake-card-subtitle">{props.recentEVaultProfit}</p>
                         </div>
                     </div>
                     <div className="expanded-body">
                         <div className="expanded-actions">
-                        <p style={{fontSize: "13px", fontWeight: "bold"}}>START STAKING</p>
+                        <p style={{fontSize: "13px", fontWeight: "bold",marginBottom:"0px"}}>START STAKING</p>
                         {!isEnabled && <button onClick={() => setIsEnabled(true)}>Enable</button>}
 {isEnabled && <button onClick={() => { openModal();}}>Stake</button>}
                         </div>
