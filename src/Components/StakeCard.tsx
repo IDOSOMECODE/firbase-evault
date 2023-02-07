@@ -95,7 +95,7 @@ const closeModal = () => {
                     </div>
                 </div>
                 <div className="stake-card-actions">
-                <button onClick={() => setIsExpanded(!isExpanded)}>{isExpanded ? "Less Details" : "Details"}</button>
+                <button onClick={() => setIsExpanded(!isExpanded)}>{isExpanded ? " Less Details" : "Details"}</button>
                 </div>
             </div>
             {isExpanded && (
