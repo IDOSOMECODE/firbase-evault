@@ -1,0 +1,1125 @@
+.mask-group-mask-group {
+    width: 1680px;
+    height: 726px;
+    position: relative;
+    font-family: Inter;
+  }
+  
+  .mask-group-rectangle-1x {
+    width: 322px;
+    box-sizing: border-box;
+    left: 80.83%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    position: absolute;
+    background-color: rgba(217, 217, 217, 1);
+    border-radius: 21px;
+  }
+  
+  .mask-group-rectangle-14x {
+    width: 327px;
+    box-sizing: border-box;
+    left: 0%;
+    right: 80.54%;
+    top: 0%;
+    bottom: 53.44%;
+    position: absolute;
+    background-color: rgba(217, 217, 217, 1);
+    border-radius: 21px;
+  }
+  
+  .mask-group-evault-0000012x {
+    left: 5.42%;
+    right: 85.95%;
+    top: 26.17%;
+    bottom: 71.76%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+    color: black;
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-rectangle-15x {
+    width: 1002px;
+    box-sizing: border-box;
+    left: 20.36%;
+    right: 20%;
+    top: 11.43%;
+    bottom: 0%;
+    position: absolute;
+    background-color: rgba(217, 217, 217, 1);
+    border-radius: 21px;
+  }
+  
+  .mask-group-rectangle-4x {
+    width: 275px;
+    box-sizing: border-box;
+    left: 82.26%;
+    right: 1.37%;
+    top: 17.91%;
+    bottom: 75.21%;
+    position: absolute;
+    background-color: rgba(164, 164, 164, 1);
+    border-radius: 4px;
+  }
+  
+  .mask-group-rectangle-2x {
+    width: 1002px;
+    box-sizing: border-box;
+    left: 20.36%;
+    right: 20%;
+    top: 0%;
+    bottom: 89.94%;
+    position: absolute;
+    background-color: rgba(217, 217, 217, 1);
+    border-radius: 21px;
+  }
+  
+  .mask-group-market-cap {
+    left: 50.95%;
+    right: 44.94%;
+    top: 2.62%;
+    bottom: 95.32%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+    color: black;
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-volume {
+    left: 38.99%;
+    right: 58.1%;
+    top: 2.62%;
+    bottom: 95.32%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+    color: black;
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-token-amounth {
+    left: 82.2%;
+    right: 12.2%;
+    top: 5.37%;
+    bottom: 92.56%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+    color: black;
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-slippage {
+    left: 8.1%;
+    right: 88.63%;
+    top: 30.3%;
+    bottom: 67.63%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+    color: black;
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-token-price {
+    left: 89.17%;
+    right: 6.73%;
+    top: 5.37%;
+    bottom: 92.56%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+    color: black;
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-age {
+    left: 95.48%;
+    right: 3.1%;
+    top: 5.37%;
+    bottom: 92.56%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+    color: black;
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-liqudity {
+    left: 62.92%;
+    right: 33.99%;
+    top: 2.62%;
+    bottom: 95.32%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+    color: black;
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-bnb {
+    position: absolute;
+    left: 60.71%;
+    right: 31.96%;
+    top: 5.37%;
+    bottom: 92.56%;
+    text-align: left;
+    line-height: 1;
+    display: inline-block;
+    font-weight: 400;
+  }
+  
+  .mask-group-component-text-0x {
+    font-size: 12px;
+    line-height: normal;
+    color: rgba(1, 139, 40, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-component-text-1x {
+    font-size: 12px;
+    line-height: normal;
+    color: black;
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-bnb-text-2x {
+    font-size: 12px;
+    line-height: normal;
+    color: rgba(174, 157, 1, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-component-text-3x {
+    font-size: 12px;
+    line-height: normal;
+    color: black;
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-component {
+    left: 50.95%;
+    right: 45.12%;
+    top: 5.37%;
+    bottom: 92.56%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(89, 89, 89, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-component-1 {
+    left: 38.63%;
+    right: 57.92%;
+    top: 5.37%;
+    bottom: 92.56%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(5, 126, 17, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-component-2 {
+    left: 29.05%;
+    right: 67.08%;
+    top: 4.55%;
+    bottom: 92.98%;
+    position: absolute;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+    color: rgba(43, 43, 43, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-component-3 {
+    left: 8.81%;
+    right: 89.35%;
+    top: 33.06%;
+    bottom: 64.46%;
+    position: absolute;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    color: rgba(43, 43, 43, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-contract {
+    left: 73.33%;
+    right: 23.33%;
+    top: 2.62%;
+    bottom: 95.32%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+    color: black;
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-bnbevault {
+    position: absolute;
+    left: 29.05%;
+    right: 66.61%;
+    top: 1.52%;
+    bottom: 96.42%;
+    text-align: left;
+    line-height: 1;
+    display: inline-block;
+    color: black;
+  }
+  
+  .mask-group-bnbtext-0x {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-evault-text-1x {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: normal;
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-xee-cd-01x {
+    left: 73.1%;
+    right: 23.04%;
+    top: 5.37%;
+    bottom: 92.56%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(51, 133, 255, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-rectangle-3x {
+    width: 275px;
+    box-sizing: border-box;
+    left: 82.26%;
+    right: 1.37%;
+    top: 10.06%;
+    bottom: 83.06%;
+    position: absolute;
+    background-color: rgba(164, 164, 164, 1);
+    border-radius: 4px;
+  }
+  
+  .mask-group-rectangle-10x {
+    width: 275px;
+    box-sizing: border-box;
+    left: 82.26%;
+    right: 1.37%;
+    top: 65.01%;
+    bottom: 28.1%;
+    position: absolute;
+    background-color: rgba(164, 164, 164, 1);
+    border-radius: 4px;
+  }
+  
+  .mask-group-rectangle-5x {
+    width: 275px;
+    box-sizing: border-box;
+    left: 82.26%;
+    right: 1.37%;
+    top: 25.76%;
+    bottom: 67.36%;
+    position: absolute;
+    background-color: rgba(164, 164, 164, 1);
+    border-radius: 4px;
+  }
+  
+  .mask-group-rectangle-8x {
+    width: 275px;
+    box-sizing: border-box;
+    left: 82.26%;
+    right: 1.37%;
+    top: 49.31%;
+    bottom: 43.8%;
+    position: absolute;
+    background-color: rgba(164, 164, 164, 1);
+    border-radius: 4px;
+  }
+  
+  .mask-group-rectangle-6x {
+    width: 275px;
+    box-sizing: border-box;
+    left: 82.26%;
+    right: 1.37%;
+    top: 33.61%;
+    bottom: 59.5%;
+    position: absolute;
+    background-color: rgba(164, 164, 164, 1);
+    border-radius: 4px;
+  }
+  
+  .mask-group-rectangle-11x {
+    width: 275px;
+    box-sizing: border-box;
+    left: 82.26%;
+    right: 1.37%;
+    top: 72.87%;
+    bottom: 20.25%;
+    position: absolute;
+    background-color: rgba(164, 164, 164, 1);
+    border-radius: 4px;
+  }
+  
+  .mask-group-rectangle-12x {
+    width: 275px;
+    box-sizing: border-box;
+    left: 82.26%;
+    right: 1.37%;
+    top: 80.72%;
+    bottom: 12.4%;
+    position: absolute;
+    background-color: rgba(164, 164, 164, 1);
+    border-radius: 4px;
+  }
+  
+  .mask-group-rectangle-9x {
+    width: 275px;
+    box-sizing: border-box;
+    left: 82.26%;
+    right: 1.37%;
+    top: 57.16%;
+    bottom: 35.95%;
+    position: absolute;
+    background-color: rgba(164, 164, 164, 1);
+    border-radius: 4px;
+  }
+  
+  .mask-group-rectangle-13x {
+    width: 275px;
+    box-sizing: border-box;
+    left: 82.26%;
+    right: 1.37%;
+    top: 88.57%;
+    bottom: 4.55%;
+    position: absolute;
+    background-color: rgba(164, 164, 164, 1);
+    border-radius: 4px;
+  }
+  
+  .mask-group-rectangle-7x {
+    width: 275px;
+    box-sizing: border-box;
+    left: 82.26%;
+    right: 1.37%;
+    top: 41.46%;
+    bottom: 51.65%;
+    position: absolute;
+    background-color: rgba(164, 164, 164, 1);
+    border-radius: 4px;
+  }
+  
+  .mask-group-hour {
+    left: 95.12%;
+    right: 2.68%;
+    top: 20.39%;
+    bottom: 77.55%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(80, 194, 70, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-hour-1 {
+    left: 95.12%;
+    right: 2.68%;
+    top: 12.53%;
+    bottom: 85.4%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(255, 10, 10, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-evault-30bnb {
+    left: 82.74%;
+    right: 12.62%;
+    top: 11.43%;
+    bottom: 84.44%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    color: rgba(255, 10, 10, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-component-4 {
+    left: 89.7%;
+    right: 7.32%;
+    top: 12.53%;
+    bottom: 85.4%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(255, 10, 10, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-evault-30bnb-1 {
+    left: 82.74%;
+    right: 12.62%;
+    top: 19.28%;
+    bottom: 76.58%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    color: rgba(80, 194, 70, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-component-5 {
+    left: 89.7%;
+    right: 7.32%;
+    top: 20.39%;
+    bottom: 77.55%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(80, 194, 70, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-hour-2 {
+    left: 95.12%;
+    right: 2.68%;
+    top: 36.09%;
+    bottom: 61.85%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(80, 194, 70, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-hour-3 {
+    left: 95.12%;
+    right: 2.68%;
+    top: 28.24%;
+    bottom: 69.7%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(255, 10, 10, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-evault-30bnb-2 {
+    left: 82.74%;
+    right: 12.62%;
+    top: 27.13%;
+    bottom: 68.73%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    color: rgba(255, 10, 10, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-component-6 {
+    left: 89.7%;
+    right: 7.32%;
+    top: 28.24%;
+    bottom: 69.7%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(255, 10, 10, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-evault-30bnb-3 {
+    left: 82.74%;
+    right: 12.62%;
+    top: 34.99%;
+    bottom: 60.88%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    color: rgba(80, 194, 70, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-component-7 {
+    left: 89.7%;
+    right: 7.32%;
+    top: 36.09%;
+    bottom: 61.85%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(80, 194, 70, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-hour-4 {
+    left: 95.12%;
+    right: 2.68%;
+    top: 51.38%;
+    bottom: 46.56%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(80, 194, 70, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-hour-5 {
+    left: 95.12%;
+    right: 2.68%;
+    top: 43.53%;
+    bottom: 54.41%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(255, 10, 10, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-evault-30bnb-4 {
+    left: 82.74%;
+    right: 12.62%;
+    top: 42.42%;
+    bottom: 53.44%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    color: rgba(255, 10, 10, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-component-8 {
+    left: 89.7%;
+    right: 7.32%;
+    top: 43.53%;
+    bottom: 54.41%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(255, 10, 10, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-evault-30bnb-5 {
+    left: 82.74%;
+    right: 12.62%;
+    top: 50.28%;
+    bottom: 45.59%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    color: rgba(80, 194, 70, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-component-9 {
+    left: 89.7%;
+    right: 7.32%;
+    top: 51.38%;
+    bottom: 46.56%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(80, 194, 70, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-hour-6 {
+    left: 95.54%;
+    right: 2.26%;
+    top: 67.22%;
+    bottom: 30.72%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(80, 194, 70, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-hour-7 {
+    left: 95.54%;
+    right: 2.26%;
+    top: 59.37%;
+    bottom: 38.57%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(255, 10, 10, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-evault-30bnb-6 {
+    left: 83.15%;
+    right: 12.2%;
+    top: 58.26%;
+    bottom: 37.6%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    color: rgba(255, 10, 10, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-component-10 {
+    left: 90.12%;
+    right: 6.9%;
+    top: 59.37%;
+    bottom: 38.57%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(255, 10, 10, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-evault-30bnb-7 {
+    left: 83.15%;
+    right: 12.2%;
+    top: 66.12%;
+    bottom: 29.75%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    color: rgba(80, 194, 70, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-component-11 {
+    left: 90.12%;
+    right: 6.9%;
+    top: 67.22%;
+    bottom: 30.72%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(80, 194, 70, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-hour-8 {
+    left: 95.54%;
+    right: 2.26%;
+    top: 82.92%;
+    bottom: 15.01%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(80, 194, 70, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-hour-9 {
+    left: 95.54%;
+    right: 2.26%;
+    top: 75.07%;
+    bottom: 22.87%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(255, 10, 10, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-evault-30bnb-8 {
+    left: 83.15%;
+    right: 12.2%;
+    top: 73.97%;
+    bottom: 21.9%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    color: rgba(255, 10, 10, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-component-12 {
+    left: 90.12%;
+    right: 6.9%;
+    top: 75.07%;
+    bottom: 22.87%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(255, 10, 10, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-evault-30bnb-9 {
+    left: 83.15%;
+    right: 12.2%;
+    top: 81.82%;
+    bottom: 14.05%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    color: rgba(80, 194, 70, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-component-13 {
+    left: 90.12%;
+    right: 6.9%;
+    top: 82.92%;
+    bottom: 15.01%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(80, 194, 70, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-hour-10 {
+    left: 95.54%;
+    right: 2.26%;
+    top: 90.36%;
+    bottom: 7.58%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(255, 10, 10, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-evault-30bnb-10 {
+    left: 83.15%;
+    right: 12.2%;
+    top: 89.26%;
+    bottom: 6.61%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    color: rgba(255, 10, 10, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-rectangle-16x {
+    width: 254px;
+    box-sizing: border-box;
+    left: 2.14%;
+    right: 82.74%;
+    top: 10.61%;
+    bottom: 84.3%;
+    position: absolute;
+    background-color: rgba(51, 51, 51, 1);
+    border-radius: 4px;
+  }
+  
+  .mask-group-rectangle-17x {
+    width: 254px;
+    box-sizing: border-box;
+    left: 2.14%;
+    right: 82.74%;
+    top: 20.39%;
+    bottom: 74.52%;
+    position: absolute;
+    background-color: rgba(51, 51, 51, 1);
+    border-radius: 4px;
+  }
+  
+  .mask-group-component-14 {
+    left: 15.89%;
+    right: 83.04%;
+    top: 21.76%;
+    bottom: 76.03%;
+    position: absolute;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    color: rgba(227, 223, 223, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-component-15 {
+    left: 90.12%;
+    right: 6.9%;
+    top: 90.36%;
+    bottom: 7.58%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: rgba(255, 10, 10, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-vault-logo-grey-icon-blacok-layer-1x {
+    width: 50px;
+    left: 21.79%;
+    right: 75.24%;
+    top: 1.52%;
+    bottom: 91.6%;
+    position: absolute;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background: url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/63f652d8fdae0742aec8cd023f34c13e1b6ec75b.webp)
+      center / cover;
+  }
+  
+  .mask-group-vault-logo-grey-icon-blacok-layer-2x {
+    width: 18px;
+    left: 2.62%;
+    right: 96.31%;
+    top: 11.85%;
+    bottom: 85.67%;
+    position: absolute;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background: url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/63f652d8fdae0742aec8cd023f34c13e1b6ec75b.webp)
+      center / cover;
+  }
+  
+  .mask-group-evault {
+    left: 3.99%;
+    right: 93.57%;
+    top: 11.98%;
+    bottom: 85.81%;
+    position: absolute;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+    color: rgba(227, 223, 223, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-component-16 {
+    left: 13.69%;
+    right: 83.04%;
+    top: 11.98%;
+    bottom: 85.81%;
+    position: absolute;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+    color: rgba(227, 223, 223, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-bnb-1 {
+    left: 3.99%;
+    right: 94.4%;
+    top: 21.63%;
+    bottom: 76.17%;
+    position: absolute;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+    color: rgba(227, 223, 223, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-swap {
+    left: 7.56%;
+    right: 88.1%;
+    top: 4.27%;
+    bottom: 91.74%;
+    position: absolute;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+    color: rgba(43, 43, 43, 1);
+    display: inline;
+    margin: 0px;
+  }
+  
+  .mask-group-bnb-bnb-logo-1x {
+    width: 18px;
+    left: 2.62%;
+    right: 96.31%;
+    top: 21.35%;
+    bottom: 76.17%;
+    position: absolute;
+    background: url(https://uortjlczjmucmpaqqhqm.supabase.co/storage/v1/object/public/firejet-converted-images/images/fbfac48e3c8c1caa9d17b8a38281eeef0d996d43.webp)
+      center / cover;
+  }
+  
+  .mask-group-rectangle-16x-1 {
+    width: 254px;
+    box-sizing: border-box;
+    left: 2.14%;
+    right: 82.74%;
+    top: 36.64%;
+    bottom: 59.09%;
+    position: absolute;
+    background-color: rgba(57, 121, 217, 1);
+    border-radius: 4px;
+  }
+  
+  .mask-group-swap-1 {
+    left: 8.69%;
+    right: 89.23%;
+    top: 37.74%;
+    bottom: 60.19%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    color: white;
+    display: inline;
+    margin: 0px;
+  }
+  
