@@ -11,7 +11,7 @@ const Dex: React.FC = () => {
   const containerStyles = {
     display: "flex",
     flexDirection: "column" as "column",
-    width: "90%",
+    width: width < 820 ? "100%" : "90%",
     marginLeft: width < 820 ? 0 : "40px"
   };
   
