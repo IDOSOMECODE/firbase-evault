@@ -8,7 +8,7 @@ const [width] = useWindowWidthAndHeight();
 const styles = {
 container: {
 background: "#f5f4f4",
-width: "80%",
+width: "90%",
 textAlign: "center",
 borderRadius: "20px",
 padding: "10px 0",
