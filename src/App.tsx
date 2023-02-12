@@ -68,7 +68,7 @@ export default function Home() {
         <ConnectWallet accentColor="white" colorMode="light" />
         </div>
         <div style={{ display: "flex", justifyContent: "flex-start" }}>
-            {width > 768 && (
+            {width > 820 && (
               <div>
                 <HeaderButtons />
               </div>
@@ -76,7 +76,7 @@ export default function Home() {
           </div>
       </Header>
       
-      {width <= 768 && <ButtomButtons />}
+      {width <= 820 && <ButtomButtons />}
       <div style={styles.content}> 
       <Routes>
       <Route path="/" element={<DisplayPane />} />
