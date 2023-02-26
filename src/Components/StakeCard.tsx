@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./StakeCard.css";
 import Modal from 'react-modal';
-import { ThirdwebProvider, useContract, useContractRead, useContractWrite } from "@thirdweb-dev/react";
+import {  useContract, useContractRead } from "@thirdweb-dev/react";
 
 interface StakeCardProps {
     logo: string;
@@ -16,9 +16,8 @@ interface StakeCardProps {
 }
 
 const StakeCard: React.FC<StakeCardProps> = (props) => {
-    const { contract, isLoading } = useContract("0xc0601e9a207b3a7a3229b1caf3c6c3a466cf1897");
+    const { contract } = useContract("0xc0601e9a207b3a7a3229b1caf3c6c3a466cf1897");
     const { data, isLoading: totalStakedIsLoading } = useContractRead(contract, "getTotalStaked");
-    const { mutateAsync: stake, isLoading: stakeIsLoading } = useContractWrite(contract, "stake");
   
     const [isExpanded, setIsExpanded] = useState(false);
     const [isEnabled, setIsEnabled] = useState(false);
