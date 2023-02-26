@@ -1,6 +1,5 @@
 import { useWindowWidthAndHeight } from "../Hooks/useWindowWidthAndHeight";
 import React from "react";
-import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
 
 const Chart: React.FC = () => {
   const [width] = useWindowWidthAndHeight();
