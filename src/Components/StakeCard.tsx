@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./StakeCard.css";
 import Modal from 'react-modal';
+import { ThirdwebProvider, useContract, useContractRead, useContractWrite } from "@thirdweb-dev/react";
 
 interface StakeCardProps {
     logo: string;
@@ -15,6 +16,10 @@ interface StakeCardProps {
 }
 
 const StakeCard: React.FC<StakeCardProps> = (props) => {
+    const { contract, isLoading } = useContract("0xc0601e9a207b3a7a3229b1caf3c6c3a466cf1897");
+    const { data, isLoading: totalStakedIsLoading } = useContractRead(contract, "getTotalStaked");
+    const { mutateAsync: stake, isLoading: stakeIsLoading } = useContractWrite(contract, "stake");
+  
     const [isExpanded, setIsExpanded] = useState(false);
     const [isEnabled, setIsEnabled] = useState(false);
     const [modalIsOpen, setModalIsOpen] = useState(false)
@@ -90,7 +95,8 @@ const closeModal = () => {
                         <p className="stat-label">APY</p>
                     </div>
                     <div className="stat2">
-                        <p className="stat-value" style={{ fontSize: "14px" }}>{props.totalStaked}</p>
+                       {!totalStakedIsLoading && <p className="stat-value" style={{ fontSize: "14px" }}>{data.value}</p>}
+{totalStakedIsLoading && <p>Loading...</p>}
                         <p className="stat-label">Total Staked</p>
                     </div>
                 </div>
