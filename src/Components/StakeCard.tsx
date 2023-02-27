@@ -1,13 +1,9 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import "./StakeCard.css";
 import Modal from 'react-modal';
 import {
-    ConnectWallet,
-    useAddress,
     useContract,
-    useContractRead,
     useContractWrite,
-    useTokenBalance,
     Web3Button,
   } from "@thirdweb-dev/react";
   import { ethers } from "ethers";
@@ -28,6 +24,7 @@ interface StakeCardProps {
 
 const StakeCard: React.FC<StakeCardProps> = (props) => {
     const { contract } = useContract("0xc0601e9a207b3a7a3229b1caf3c6c3a466cf1897");
+// eslint-disable-next-line
     const { mutateAsync: stake, isLoading } = useContractWrite(contract, "stake")
     const [amount, setAmount] = useState<string>("");
     const stakingContractAddress = "0xc0601e9a207b3a7a3229b1caf3c6c3a466cf1897";
