@@ -1,5 +1,6 @@
 import React from "react";
 import { ConnectWallet } from "@thirdweb-dev/react";
+import { Binance } from "@thirdweb-dev/chains";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import "./styles/Home.css";
 import background from "./Image/background.jpg";
@@ -14,7 +15,6 @@ import Farm from "./Components/Farm";
 import Pools from "./Components/Pools";
 import Dex from "./Components/Dex";
 import Lottery from "./Components/Lottery";
-
 
 const styles = {
   layout: {
@@ -54,8 +54,8 @@ export default function Home() {
   const [width] = useWindowWidthAndHeight();
 
   return (
+    <ThirdwebProvider activeChain={Binance}>
     <BrowserRouter>
-    <ThirdwebProvider activeChain="binance">
     <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
     <Layout style={styles.layout}>
       <div style={{ ...styles.Header, justifyContent: "flex-end" }}>
@@ -91,7 +91,7 @@ export default function Home() {
       </div>
     </Layout>
   </div>
-  </ThirdwebProvider>
   </BrowserRouter>
+  </ThirdwebProvider>
 );
 }

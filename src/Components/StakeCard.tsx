@@ -1,7 +1,18 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from "react";
 import "./StakeCard.css";
 import Modal from 'react-modal';
-import {  useContract, useContractRead } from "@thirdweb-dev/react";
+import {
+    ConnectWallet,
+    useAddress,
+    useContract,
+    useContractRead,
+    useContractWrite,
+    useTokenBalance,
+    Web3Button,
+  } from "@thirdweb-dev/react";
+  import { ethers } from "ethers";
+  import "@thirdweb-dev/contracts/extension/ContractMetadata.sol";
+  
 
 interface StakeCardProps {
     logo: string;
@@ -17,8 +28,11 @@ interface StakeCardProps {
 
 const StakeCard: React.FC<StakeCardProps> = (props) => {
     const { contract } = useContract("0xc0601e9a207b3a7a3229b1caf3c6c3a466cf1897");
-    const { data, isLoading: totalStakedIsLoading } = useContractRead(contract, "getTotalStaked");
-  
+    const { mutateAsync: stake, isLoading } = useContractWrite(contract, "stake")
+    const [amount, setAmount] = useState<string>("");
+    const stakingContractAddress = "0xc0601e9a207b3a7a3229b1caf3c6c3a466cf1897";
+
+    
     const [isExpanded, setIsExpanded] = useState(false);
     const [isEnabled, setIsEnabled] = useState(false);
     const [modalIsOpen, setModalIsOpen] = useState(false)
@@ -31,6 +45,7 @@ const closeModal = () => {
 };
 
 
+ 
 
     return (
         
@@ -65,23 +80,28 @@ const closeModal = () => {
                 <img src={props.logo} alt={props.manualEVault} className="modal-logo" style={{width: '50px', height: '50px'}} />
             </div>
             <div className="textbox-container" style={{textAlign: 'center', marginTop: "20px"}}>
-                <input type="text" id="range-value" style={{width: '200px', height: '40px', fontSize: '20px'}} placeholder="" />
+            <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} />
             </div>
-            <div className="range-slider-wrapper" style={{textAlign: 'center' , marginTop: "10px"}}>
-                <input id="my-range" type="range" className="range-slider-horizontal" onInput={(e) => {
-                    const rangeValue = document.getElementById('range-value') as HTMLInputElement;
-                    rangeValue.value = (e.currentTarget as HTMLInputElement).value;
-                }} min={0} max={1000000}/>
-            </div>
-            <div className="button-container" style={{textAlign: 'center', justifyContent: "space-between", display: "flex", marginTop: "10px"}}>
-            <button style={{marginLeft: "40px"}}>25%</button>
-                <button>50%</button>
-                <button>75%</button>
-                <button style={{marginRight: "40px"}} >100%</button>
 
-</div>
+        
             <p style={{textAlign: 'center',  marginTop: "10px"}}>Modal content here</p>
-            <div style={{textAlign: 'center',  marginTop: "10px"}}><button style={{fontSize: '20px', padding: '10px 20px', width: '200px', height: '50px'}}>Stake</button></div>
+            <div style={{textAlign: 'center',  marginTop: "10px"}}>
+                
+          <Web3Button
+            contractAddress={"0xc0601e9a207b3a7a3229b1caf3c6c3a466cf1897"}
+            action={async (contract) => {
+                await contract.erc20.setAllowance(stakingContractAddress, amount);
+                ;await contract.call(
+                    "stake",
+                    ethers.utils.parseEther(amount)
+                  );
+                  alert("Tokens staked successfully!");
+                }}
+              >
+            Stake!
+          </Web3Button>
+          
+          </div>
             <div style={{textAlign: 'center',  marginTop: "10px"}}><button>Get eVault</button></div>
             </div>
             
@@ -94,8 +114,7 @@ const closeModal = () => {
                         <p className="stat-label">APY</p>
                     </div>
                     <div className="stat2">
-                       {!totalStakedIsLoading && <p className="stat-value" style={{ fontSize: "14px" }}>{data.value}</p>}
-{totalStakedIsLoading && <p>Loading...</p>}
+                       <p className="stat-value" style={{ fontSize: "14px" }}>hi</p>
                         <p className="stat-label">Total Staked</p>
                     </div>
                 </div>
