@@ -5,6 +5,7 @@ import {
     useContract,
     useContractWrite,
     Web3Button,
+    useAddress,
   } from "@thirdweb-dev/react";
   import { ethers } from "ethers";
   import "@thirdweb-dev/contracts/extension/ContractMetadata.sol";
@@ -23,14 +24,23 @@ interface StakeCardProps {
 }
 
 const StakeCard: React.FC<StakeCardProps> = (props) => {
-    const { contract } = useContract("0xc0601e9a207b3a7a3229b1caf3c6c3a466cf1897");
+    const address = useAddress();
+    const { contract: mainContract } = useContract("0x3C07b029480117530448aF87802AEe90D3E8163e");
+    const tokenContractAddress = "0xf39055f17b4eD74c6BED89fEf826eD6C00099E47";
+    const stakingContractAddress = "0x3C07b029480117530448aF87802AEe90D3E8163e";
 // eslint-disable-next-line
-    const { mutateAsync: stake, isLoading } = useContractWrite(contract, "stake")
+    const { contract: stakeContract } = useContract(stakingContractAddress, "custom");
+    const { contract: token } = useContract(tokenContractAddress);
+    const { mutateAsync: approve, isLoading } = useContractWrite(
+      token,
+      "approve"
+    );
+    
+    const { mutateAsync: stake } = useContractWrite(mainContract, "stake");
     const [amount, setAmount] = useState<string>("");
-    const stakingContractAddress = "0xc0601e9a207b3a7a3229b1caf3c6c3a466cf1897";
-
     
     const [isExpanded, setIsExpanded] = useState(false);
+// eslint-disable-next-line
     const [isEnabled, setIsEnabled] = useState(false);
     const [modalIsOpen, setModalIsOpen] = useState(false)
 const openModal = () => {
@@ -40,9 +50,25 @@ const openModal = () => {
 const closeModal = () => {
     setModalIsOpen(false);
 };
+const handleStake = async () => {
+    await approveTokens(amount);
+    alert("Pool Enabled!");
+    await stakeTokens(amount);
+    alert("Tokens staked successfully!");
+};
 
 
- 
+const approveTokens = async (amount: string) => {
+    if (!address) return;
+ // eslint-disable-next-line
+    const data = await approve(
+        [stakingContractAddress, ethers.utils.parseEther(amount)]
+    );
+};
+const stakeTokens = async (amount: string) => {
+    if (!address) return;
+    await stake([ethers.utils.parseEther(amount), {}]);
+  };
 
     return (
         
@@ -84,19 +110,13 @@ const closeModal = () => {
             <p style={{textAlign: 'center',  marginTop: "10px"}}>Modal content here</p>
             <div style={{textAlign: 'center',  marginTop: "10px"}}>
                 
-          <Web3Button
-            contractAddress={"0xc0601e9a207b3a7a3229b1caf3c6c3a466cf1897"}
-            action={async (contract) => {
-                await contract.erc20.setAllowance(stakingContractAddress, amount);
-                ;await contract.call(
-                    "stake",
-                    ethers.utils.parseEther(amount)
-                  );
-                  alert("Tokens staked successfully!");
-                }}
-              >
-            Stake!
-          </Web3Button>
+            <Web3Button
+  contractAddress={"0xc0601e9a207b3a7a3229b1caf3c6c3a466cf1897"}
+  action={handleStake}
+  isDisabled={!amount || isLoading}
+>
+  Stake!
+</Web3Button>
           
           </div>
             <div style={{textAlign: 'center',  marginTop: "10px"}}><button>Get eVault</button></div>
@@ -130,8 +150,8 @@ const closeModal = () => {
                     <div className="expanded-body">
                         <div className="expanded-actions">
                         <p style={{fontSize: "13px", fontWeight: "bold",marginBottom:"0px"}}>START STAKING</p>
-                        {!isEnabled && <button onClick={() => setIsEnabled(true)}>Enable</button>}
-{isEnabled && <button onClick={() => { openModal();}}>Stake</button>}
+                        
+<button onClick={() => { openModal();}}>Stake</button>
                         </div>
                         </div>
                         </div>
