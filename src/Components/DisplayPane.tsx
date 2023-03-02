@@ -42,7 +42,7 @@ const DisplayPane: React.FC = () => {
   const isMobile = width <= 768;
   const address = useAddress();
  // eslint-disable-next-line
-  const { contract, isLoading, error } = useContract("0xf39055f17b4eD74c6BED89fEf826eD6C00099E47", EVAULTABI);
+  const { contract, isLoading, error } = useContract("0x7722C97E49453D619fB791C9e0dD288838d03fa0", EVAULTABI);
   const { data: balanceOf } = useContractRead(contract, "balanceOf", address)
   
   function formatAmt(amt: any) {
