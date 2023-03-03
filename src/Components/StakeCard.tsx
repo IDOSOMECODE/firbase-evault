@@ -263,8 +263,8 @@ const handleWithdraw = async () => {
                     <div className="expanded-header">
                         <div className="stake-card-info">
                         {isEarnEVaultStakeLoading ? (
-  <div>
-    <p className="stat-value" style={{ fontSize: "14px" }}>loading...</p>
+  <div style={{marginLeft: "15px"}}>
+    <div className="stat-value" style={{ fontSize: "14px", }}>loading...</div>
   </div>
 ) : (
   <div>
