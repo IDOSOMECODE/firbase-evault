@@ -255,7 +255,7 @@ const handleWithdraw = async () => {
                     
                 </div>
                 <div className="stake-card-actions">
-                <button onClick={() => setIsExpanded(!isExpanded)}>{isExpanded ? " Less Details" : "Details"}</button>
+                <button onClick={() => setIsExpanded(!isExpanded)}>{isExpanded ? " Show less" : "Details"}</button>
                 </div>
             </div>
             {isExpanded && (
