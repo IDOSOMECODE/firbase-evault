@@ -62,17 +62,7 @@ const Pools: React.FC = () => {
     viewContractLink={'https://example.com/evault1'}
     connectLink={'https://example.com/connect'}
 />
-<StakeCard2 
-    logo={eVaultLogo}
-    manualEVault={'Manual eVault'}
-    earnEVaultStake={'Earn by staking tokens'}
-    apy={'260.4'}
-    totalStaked={'1,000,000'}
-    detailsLink={'/evault1'}
-    recentEVaultProfit={'$10,000'}
-    viewContractLink={'https://example.com/evault1'}
-    connectLink={'https://example.com/connect'}
-/>
+
           </div>
       </div>
   );
