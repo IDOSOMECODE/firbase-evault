@@ -255,7 +255,26 @@ const handleWithdraw = async () => {
                     
                 </div>
                 <div className="stake-card-actions">
-                <button onClick={() => setIsExpanded(!isExpanded)}>{isExpanded ? " Show less" : "Details"}</button>
+                <button
+  onClick={() => setIsExpanded(!isExpanded)}
+  style={{
+    background: "linear-gradient(to right, #333333, #000000)",
+    color: "white",
+    padding: "8px 5px",
+    borderRadius: "4px",
+    border: "none",
+    cursor: "pointer",
+    fontWeight: "bold",
+    fontSize: "16px",
+    marginRight: "15px",
+    transition: "background-color 0.3s ease",
+    marginTop: "4px",
+    width: "100px", 
+    height: "40px" 
+  }}
+>
+  {isExpanded ? " Show less" : "Details"}
+</button>
                 </div>
             </div>
             {isExpanded && (
@@ -276,9 +295,30 @@ const handleWithdraw = async () => {
                     </div>
                     <div className="expanded-body">
                         <div className="expanded-actions">
-                        <p style={{fontSize: "13px", fontWeight: "bold",marginBottom:"0px"}}>START STAKING</p>
                         
-<button onClick={() => { openModal();}}>Stake</button>
+                        
+                        <button
+  onClick={() => {
+    openModal();
+  }}
+  style={{
+    marginRight: "5px",
+    background: "linear-gradient(to right, #333333, #000000)",
+    color: "white",
+    padding: "8px 5px",
+    borderRadius: "4px",
+    border: "none",
+    cursor: "pointer",
+    fontWeight: "bold",
+    fontSize: "16px",
+    transition: "background-color 0.3s ease",
+    marginTop: "10px",
+    width: "120px", 
+    height: "40px" 
+}}
+>
+  Stake
+</button>
                         </div>
                         </div>
                         </div>
