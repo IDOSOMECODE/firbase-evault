@@ -45,6 +45,7 @@ const StakeCard: React.FC<StakeCardProps> = (props) => {
   );
 
   const { mutateAsync: stake } = useContractWrite(mainContract, "stake");
+  const { mutateAsync: withdraw } = useContractWrite(mainContract, "withdraw");
   const [amount, setAmount] = useState<string>("");
 
   const [isExpanded, setIsExpanded] = useState(false);
@@ -62,10 +63,24 @@ const StakeCard: React.FC<StakeCardProps> = (props) => {
 
   const handleStake = async () => {
     await approveTokens(amount);
-    alert("Pool Enabled!");
+    alert("Pool Enabled! Now you need to confirm transaction to Staking pool!");
     await stakeTokens(amount);
     alert("Tokens staked successfully!");
   };
+
+  
+const handleWithdraw = async () => {
+    alert("You will now Unstake your tokens and claim reward!");
+    await withdraw([]);
+    alert("Tokens withdrawn successfully!");
+  };
+
+
+  useEffect(() => {
+    setIsEnabled(Number(totalStaked) > 0);
+  }, [totalStaked]);
+
+  
 
   useEffect(() => {
     if (ApyData) {
@@ -93,6 +108,8 @@ const StakeCard: React.FC<StakeCardProps> = (props) => {
     if (!address) return;
     await stake([ethers.utils.parseEther(amount), {}]);
   };
+
+
 
     return (
         
@@ -126,24 +143,49 @@ const StakeCard: React.FC<StakeCardProps> = (props) => {
             <div className="logo-container" style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                 <img src={props.logo} alt={props.manualEVault} className="modal-logo" style={{width: '50px', height: '50px'}} />
             </div>
-            <div className="textbox-container" style={{textAlign: 'center', marginTop: "20px"}}>
-            <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} />
+            <div className="textbox-container" style={{textAlign: 'center', marginTop: "20px", marginBottom: "10px"}}>
+            <input
+  type="number"
+  value={amount}
+  onChange={(e) => setAmount(e.target.value)}
+  style={{ 
+    width: '80%', 
+    padding: '8px', 
+    borderRadius: '4px', 
+    border: '1px solid #ccc', 
+    marginTop: '10px' 
+  }}
+/>
             </div>
 
         
-            <p style={{textAlign: 'center',  marginTop: "10px"}}>Modal content here</p>
+            <p style={{textAlign: 'center',fontSize: "20px" ,  marginTop: "30"}}>Stake eVault, Earn eVault</p>
+            <p style={{textAlign: 'center',  marginTop: "10px"}}> You can withdraw your stake and reward at any time. If you have an NFT, you'll receive a 1.25x multiplier of rewards.</p>
             <div style={{textAlign: 'center',  marginTop: "10px"}}>
                 
             <Web3Button
   contractAddress={"0x4356Ef291421416AA3D1216023a2509da4BB06fC"}
   action={handleStake}
-  isDisabled={!amount}
+  isDisabled={!amount || Number(totalStaked) > 1}
 >
   Stake!
 </Web3Button>
+<div style={{ marginTop: "20px"}}>
+<Web3Button
+  contractAddress={"0x4356Ef291421416AA3D1216023a2509da4BB06fC"}
+  action={handleWithdraw}
+  isDisabled={!isEnabled}
+  
+>
+  Withdraw!
+</Web3Button>
           
-          </div>
-            <div style={{textAlign: 'center',  marginTop: "10px"}}><button>Get eVault</button></div>
+</div></div>
+          <div style={{ textAlign: 'center', marginTop: "10px" }}>
+  <a href="https://pancakeswap.finance/swap?outputCurrency=0x7722C97E49453D619fB791C9e0dD288838d03fa0" target="_blank" rel="noopener noreferrer">
+    <button>Get eVault</button>
+  </a>
+</div>
             </div>
             
         
