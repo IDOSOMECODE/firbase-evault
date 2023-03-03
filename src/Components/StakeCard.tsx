@@ -8,7 +8,7 @@ import {
   useAddress,
   useContractRead
 } from "@thirdweb-dev/react";
-import { ethers } from "ethers";
+import { ethers, BigNumber } from "ethers";
 import "@thirdweb-dev/contracts/extension/ContractMetadata.sol";
 
 
@@ -25,9 +25,11 @@ interface StakeCardProps {
 }
 
 const StakeCard: React.FC<StakeCardProps> = (props) => {
-  const address = useAddress();
+    const address = useAddress();
   const [apy, setApy] = useState("");
   const [totalStaked, SetTotalStaked] = useState("");
+  const [earnEVaultStake, setearnEVaultStake] = useState("");
+  const [isEarnEVaultStakeLoading, setIsEarnEVaultStakeLoading] = useState(true)
   const { contract: mainContract } = useContract("0x4356Ef291421416AA3D1216023a2509da4BB06fC");
   const tokenContractAddress = "0x7722C97E49453D619fB791C9e0dD288838d03fa0";
   const stakingContractAddress = "0x4356Ef291421416AA3D1216023a2509da4BB06fC";
@@ -37,7 +39,10 @@ const StakeCard: React.FC<StakeCardProps> = (props) => {
   const { data: ApyData, isLoading: isApyLoading } = useContractRead(mainContract, "getFixedAPY");
 // eslint-disable-next-line
   const { data: getTotalStakedData, isLoading: isTotalStakedLoading } = useContractRead(mainContract, "getTotalStaked");
+// eslint-disable-next-line
+  const { data: getEstimatedRewardData, isLoading: isEstimatedRewardLoading } = useContractRead(mainContract, "getEstimatedReward", address);
   const { contract: token } = useContract(tokenContractAddress);
+  const { data: balanceOf } = useContractRead(token, "balanceOf", address);
 // eslint-disable-next-line
   const { mutateAsync: approve, isLoading: isApproveLoading } = useContractWrite(
     token,
@@ -53,6 +58,8 @@ const StakeCard: React.FC<StakeCardProps> = (props) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
+
+  
   const openModal = () => {
     setModalIsOpen(true);
   };
@@ -80,7 +87,16 @@ const handleWithdraw = async () => {
     setIsEnabled(Number(totalStaked) > 0);
   }, [totalStaked]);
 
-  
+  useEffect(() => {
+    setIsEarnEVaultStakeLoading(true);
+    if (getEstimatedRewardData) {
+      const decimals = 18; // replace 18 with the actual decimals of the token
+      const earnEVaultStakeValue = ethers.utils.formatUnits(getEstimatedRewardData.toString(), decimals);
+      const formattedValue = parseFloat(earnEVaultStakeValue).toFixed(4);
+      setearnEVaultStake(formattedValue);
+      setIsEarnEVaultStakeLoading(false);
+    }
+  }, [getEstimatedRewardData]);
 
   useEffect(() => {
     if (ApyData) {
@@ -96,6 +112,8 @@ const handleWithdraw = async () => {
     }
   }, [getTotalStakedData]);
 
+
+
   const approveTokens = async (amount: string) => {
     if (!address) return;
     // eslint-disable-next-line
@@ -109,6 +127,21 @@ const handleWithdraw = async () => {
     await stake([ethers.utils.parseEther(amount), {}]);
   };
 
+  function formatAmt(amt: any) {
+    let a: any;
+    if (BigNumber.isBigNumber(amt)) {
+      a = amt.div(BigNumber.from("1000000000000000000"));
+    } else {
+      amt = BigNumber.from(amt);
+      a = amt.div(BigNumber.from("1000000000000000000"));
+    }
+    const formatter = new Intl.NumberFormat('en-US', {
+      style: 'decimal',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+    return formatter.format(a);
+  }
 
 
     return (
@@ -143,7 +176,7 @@ const handleWithdraw = async () => {
             <div className="logo-container" style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                 <img src={props.logo} alt={props.manualEVault} className="modal-logo" style={{width: '50px', height: '50px'}} />
             </div>
-            <div className="textbox-container" style={{textAlign: 'center', marginTop: "20px", marginBottom: "10px"}}>
+            <div className="textbox-container" style={{textAlign: 'center', marginTop: "5px", marginBottom: "10px"}}>
             <input
   type="number"
   value={amount}
@@ -155,12 +188,15 @@ const handleWithdraw = async () => {
     border: '1px solid #ccc', 
     marginTop: '10px' 
   }}
-/>
+/>  
             </div>
+            <p style={{textAlign: 'center', fontSize: "10px", marginTop: "3px" }}>
+        <b>Your Balance: {balanceOf && formatAmt(balanceOf?.toString())} eVault</b>
 
+      </p>
         
-            <p style={{textAlign: 'center',fontSize: "20px" ,  marginTop: "30"}}>Stake eVault, Earn eVault</p>
-            <p style={{textAlign: 'center',  marginTop: "10px"}}> You can withdraw your stake and reward at any time. If you have an NFT, you'll receive a 1.25x multiplier of rewards.</p>
+            <p style={{textAlign: 'center',fontSize: "20px" ,  marginTop: "5px"}}>Stake eVault, Earn eVault</p>
+            <p style={{textAlign: 'center'}}> You can withdraw your stake and reward at any time. If you have an NFT, you'll receive a 1.25x multiplier of rewards.</p>
             <div style={{textAlign: 'center',  marginTop: "10px"}}>
                 
             <Web3Button
@@ -171,6 +207,7 @@ const handleWithdraw = async () => {
   Stake!
 </Web3Button>
 <div style={{ marginTop: "20px"}}>
+
 <Web3Button
   contractAddress={"0x4356Ef291421416AA3D1216023a2509da4BB06fC"}
   action={handleWithdraw}
@@ -225,8 +262,16 @@ const handleWithdraw = async () => {
                 <div className="stake-card-expanded">
                     <div className="expanded-header">
                         <div className="stake-card-info">
-                            <h3 className="stake-card-title2" style={{ fontSize: "14px" }}>Profit</h3>
-                            <p className="stake-card-subtitle">Soon%</p>
+                        {isEarnEVaultStakeLoading ? (
+  <div>
+    <p className="stat-value" style={{ fontSize: "14px" }}>loading...</p>
+  </div>
+) : (
+  <div>
+    <p className="stat-value" style={{ fontSize: "14px" }}>{earnEVaultStake}</p>
+    <p className="stat-label">Earn eVault Stake</p>
+  </div>
+)}
                         </div>
                     </div>
                     <div className="expanded-body">
