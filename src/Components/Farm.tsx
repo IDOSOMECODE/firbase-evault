@@ -1,6 +1,7 @@
 
-import "./Pools.css";
-
+import "./Farm.css";
+import  Farmcard  from './Farmcard';
+import eVaultLogo from "../Image/eVaultLogo.png";
 const Farm: React.FC = () => {
 
   const styles = {
@@ -21,7 +22,7 @@ const Farm: React.FC = () => {
       marginBottom: "10px"
     },
     content: {
-      width: "85%",
+      width: "95%",
       margin: "auto",
       fontSize: "17px"
     },
@@ -39,16 +40,29 @@ const Farm: React.FC = () => {
 
   return (
     <div style={{ ...styles.container}}>
-      <div style={styles.title}>Farms</div>
+      <div style={styles.title}>Farm</div>
       <div style={styles.content}>
         All active Farm
-        <div>Please send me a direct message if you wish to list your Farm.</div>
-        <div><a href="https://t.me/Aleksandee">
+        <div>Harvest your digital wealth with Crypto Farm</div>
+        <div><a href="https://t.me/Aleksandee" target="_blank" rel="noreferrer">
           Click to contact.
         </a></div>
       </div>
       
+      <div style={styles.content}>
+          <Farmcard 
+    logo={eVaultLogo}
+    manualEVault={'Farm eVault'}
+    earnEVaultStake={'Farm by locking tokens'}
+    apy={'260.4'}
+    totalStaked={'1,000,000'}
+    detailsLink={'/evault1'}
+    recentEVaultProfit={'$10,000'}
+    viewContractLink={'https://example.com/evault1'}
+    connectLink={'https://example.com/connect'}
+/>
 
+          </div>
       </div>
   );
 };

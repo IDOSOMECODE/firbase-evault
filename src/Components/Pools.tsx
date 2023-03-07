@@ -43,7 +43,7 @@ const Pools: React.FC = () => {
       <div style={styles.title}>Pools</div>
       <div style={styles.content}>
         All active Pools
-        <div>Please send me a direct message if you wish to list your token.</div>
+        <div>Earn passive income with crypto staking.</div>
         <div><a href="https://t.me/Aleksandee" target="_blank" rel="noreferrer">
           Click to contact.
         </a></div>

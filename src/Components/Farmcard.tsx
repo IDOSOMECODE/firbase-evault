@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./StakeCard.css";
+import "./Farmcard.css";
 import Modal from 'react-modal';
 import {
   useContract,
@@ -12,7 +12,7 @@ import { ethers, BigNumber } from "ethers";
 import "@thirdweb-dev/contracts/extension/ContractMetadata.sol";
 
 
-interface StakeCardProps {
+interface FarmcardProps {
   logo: string;
   manualEVault: string;
   earnEVaultStake: string;
@@ -24,7 +24,7 @@ interface StakeCardProps {
   connectLink: string;
 }
 
-const StakeCard: React.FC<StakeCardProps> = (props) => {
+const Farmcard: React.FC<FarmcardProps> = (props) => {
     const address = useAddress();
   const [apy, setApy] = useState("");
   const [totalStaked, SetTotalStaked] = useState("");
@@ -245,7 +245,7 @@ const handleWithdraw = async () => {
                     {getTotalStakedData ? (
                         <div className="stat2">
                        <p className="stat-value" style={{ fontSize: "14px" }}>{totalStaked}</p>
-                        <p className="stat-label">Your Stakes</p>
+                        <p className="stat-label">In Your Farm</p>
                         </div>
                         ) : (
                             <div className="stat2">
@@ -288,7 +288,7 @@ const handleWithdraw = async () => {
 ) : (
   <div>
     <p className="stat-value" style={{ fontSize: "14px" }}>{earnEVaultStake}</p>
-    <p className="stat-label">Earn eVault Stake</p>
+    <p className="stat-label">Farm Earnings</p>
   </div>
 )}
                         </div>
@@ -326,4 +326,4 @@ const handleWithdraw = async () => {
         </div>
     );
 };
-export default StakeCard;
+export default Farmcard;
