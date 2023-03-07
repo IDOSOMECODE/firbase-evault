@@ -38,7 +38,7 @@ const StakeCard: React.FC<StakeCardProps> = (props) => {
 // eslint-disable-next-line
   const { data: ApyData, isLoading: isApyLoading } = useContractRead(mainContract, "getFixedAPY");
 // eslint-disable-next-line
-  const { data: getTotalStakedData, isLoading: isTotalStakedLoading } = useContractRead(mainContract, "getTotalStaked");
+  const { data: getTotalStakedData, isLoading: isTotalStakedLoading } = useContractRead(mainContract, "stakes", address);
 // eslint-disable-next-line
   const { data: getEstimatedRewardData, isLoading: isEstimatedRewardLoading } = useContractRead(mainContract, "getEstimatedReward", address);
   const { contract: token } = useContract(tokenContractAddress);
