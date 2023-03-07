@@ -245,7 +245,7 @@ const handleWithdraw = async () => {
                     {getTotalStakedData ? (
                         <div className="stat2">
                        <p className="stat-value" style={{ fontSize: "14px" }}>{totalStaked}</p>
-                        <p className="stat-label">In Your Farm</p>
+                        <p className="stat-label">Your Farm</p>
                         </div>
                         ) : (
                             <div className="stat2">
