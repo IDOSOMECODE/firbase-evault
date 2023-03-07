@@ -2,7 +2,6 @@
 import "./Pools.css";
 import  StakeCard  from './StakeCard';
 import eVaultLogo from "../Image/eVaultLogo.png";
-import StakeCard2 from "./StakeCard2";
 const Pools: React.FC = () => {
 
   const styles = {
